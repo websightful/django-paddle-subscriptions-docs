@@ -1,2 +1,1 @@
-# django-paddle-subscriptions-docs
-Django Paddle Subscriptions Documentation
+# Django Paddle Subscriptions Documentation
