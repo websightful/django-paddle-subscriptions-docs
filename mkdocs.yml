@@ -1,0 +1,17 @@
+site_name: Django Paddle Subscriptions
+site_url: https://archatas.github.io/django-paddle-subscriptions-docs/
+site_description: Django Paddle Subscriptions Documentation
+site_author: Aidas Bendoraitis a.k.a. archatas / DjangoTricks
+docs_dir: src
+site_dir: docs
+repo_url: https://websightful.gumroad.com/l/django-paddle-subscriptions
+repo_name: Buy Now!
+
+nav:
+    - Home: 'index.md'
+    - Getting Started: 'getting-started.md'
+    - Customization: 'customization.md'
+    - 'More':
+        - Settings Example: 'paddle-subscriptions-settings.md'
+        - Changelog: 'changelog.md'
+        - License: 'license.md'
