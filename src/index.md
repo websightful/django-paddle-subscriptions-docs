@@ -14,7 +14,7 @@ Django Paddle Subscriptions is a Django app for SaaS projects implementing free 
 
 ## Who is it for?
 
-Django Paddle Subscriptions are for business owners and tech entrepreneurs who want to provide Django-based SaaS globally.
+The Django Paddle Subscriptions app is for business owners and tech entrepreneurs who want to provide Django-based SaaS globally.
 
 | Feature                                   | Value                                          |
 |-------------------------------------------|------------------------------------------------|
@@ -53,11 +53,11 @@ There are lots of benefits:
 
 ## How does it work?
 
-You will need a seller's account at Paddle and your business and SaaS domains approved (that might take about two weeks). At first, implement the payments in the [sandbox environment](https://sandbox-vendors.paddle.com/).
+You will need a seller's account at Paddle and your business and SaaS domains approved (which might take from a few days to two weeks). At first, implement the payments in the [sandbox environment](https://sandbox-vendors.paddle.com/).
 
-At Paddle, create Products for each subscription plan and one monthly and one yearly price for each plan.
+At Paddle, create Products for each subscription plan and one monthly and one yearly price for each plan. For example, Premium plan as a product will have two prices: Premium monthly and Premium yearly.
 
-At your Django website, fetch all data from Paddle, create subscription plans, and attach the prices accordingly.
+At your Django website, fetch all data from Paddle, create subscription plans, and attach the prices to the subscription plans accordingly.
 
 Test these workflows:
 
@@ -74,6 +74,10 @@ Django Paddle Subscriptions are used in production at these websites:
 
 - [1st things 1st](https://www.1st-things-1st.com)
 - [Remember Your People](https://remember-your-people.app/)
+
+## Credits
+
+The Django Paddle Subscriptions app under the hood uses [paddle-billing-client](https://github.com/websideproject/paddle-billing-client), which was thoroughly crafted by Benjamin Gervan.
 
 ## Disclaimer
 
