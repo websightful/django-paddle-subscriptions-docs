@@ -117,7 +117,7 @@ These are the Django Paddle Subscription templates:
 The Django Paddle Subscriptions app is compatible with Content-Security-Policy via Django-CSP app. To use it, enable nonces for script tags in the project's settings:
 
 ```python
-CSP_INCLUDE_NONCE_IN = ["script-src"]
+CSP_INCLUDE_NONCE_IN = ["script-src", "style-src"]
 ```
 
 ## Support for Upsells
