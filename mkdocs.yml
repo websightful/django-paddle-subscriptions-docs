@@ -12,6 +12,5 @@ nav:
     - Getting Started: 'getting-started.md'
     - Customization: 'customization.md'
     - 'More':
-        - Settings Example: 'paddle-subscriptions-settings.md'
         - Changelog: 'changelog.md'
         - License: 'license.md'
