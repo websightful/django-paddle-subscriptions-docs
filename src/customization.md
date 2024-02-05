@@ -5,8 +5,13 @@
 You can restrict the showing of pricing widget to specific IPs by setting the `PADDLE_SUBSCRIPTIONS["RESTRICTED_TO_IPS"]` setting:
 
 ```python
-PADDLE_SUBSCRIPTIONS["RESTRICTED_TO_IPS"] = ["1.2.3.4"]
+PADDLE_SUBSCRIPTIONS["RESTRICTED_TO_IPS"] = [
+    "1.2.3.4",  # Your public IP address required for the staging or production environment
+    "127.0.0.1",  # Your local IP address required for the development environment
+]
 ```
+
+To find your Public IP address, google for "what's my ip". Note that public IPs change every 2 weeks.
 
 Then in the templates of use the `request.show_paddle_subscriptions` to check whether the pricing widget needs to be included:
 
