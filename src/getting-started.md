@@ -98,7 +98,7 @@ The webhook at `https://example.com/subscriptions/webhook/` will be registered a
 
 Then, link your subscription plans with sandbox monthly and yearly prices.
 
-Also set the default payment link at Paddle (Paddle > Checkout > Checkout settings) to `https://example.com/subscriptions/payments/`. It will redirect to the correct location based on your SaaS project if you have more than one with the same Paddle account.
+Also set the default payment link at Paddle (Paddle ➔ Checkout ➔ Checkout settings) to `https://example.com/subscriptions/payments/`. It will redirect to the correct location based on your SaaS project if you have more than one with the same Paddle account.
 
 ### 8. Create a pricing page
 
@@ -117,7 +117,7 @@ The copy of the templates serves two purposes: you can collect translatable stri
 
 ### 10. Update your signup and account deletion views
 
-Your registration view must link to the subscription that has been done before signup or create a new subscriber with a free plan if they haven't subscribed yet:
+Your Signup view must link to the subscription that has been done before signup or create a new subscriber with a free plan if they haven't subscribed yet:
 
 ```python
 from paddle_subscriptions.services import (

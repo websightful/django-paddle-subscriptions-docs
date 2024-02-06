@@ -173,7 +173,7 @@ urlpatterns = [
 </code></pre>
 <p>The webhook at <code>https://example.com/subscriptions/webhook/</code> will be registered at Paddle and all Paddle events available in the API will be sent to it.</p>
 <p>Then, link your subscription plans with sandbox monthly and yearly prices.</p>
-<p>Also set the default payment link at Paddle (Paddle &gt; Checkout &gt; Checkout settings) to <code>https://example.com/subscriptions/payments/</code>. It will redirect to the correct location based on your SaaS project if you have more than one with the same Paddle account.</p>
+<p>Also set the default payment link at Paddle (Paddle ➔ Checkout ➔ Checkout settings) to <code>https://example.com/subscriptions/payments/</code>. It will redirect to the correct location based on your SaaS project if you have more than one with the same Paddle account.</p>
 <h3 id="8-create-a-pricing-page">8. Create a pricing page</h3>
 <p>Add the following template tag either on the start page or on a separate pricing page view:</p>
 <pre><code class="language-django">{% load paddle_subscriptions_tags %}
@@ -183,7 +183,7 @@ urlpatterns = [
 <p>Copy the templates from <code>paddle_subscriptions/templates</code> in site-packages to your project and adjust them as necessary.</p>
 <p>The copy of the templates serves two purposes: you can collect translatable strings into your project, and you can make the TailwindCSS classes discoverable by your installation.</p>
 <h3 id="10-update-your-signup-and-account-deletion-views">10. Update your signup and account deletion views</h3>
-<p>Your registration view must link to the subscription that has been done before signup or create a new subscriber with a free plan if they haven't subscribed yet:</p>
+<p>Your Signup view must link to the subscription that has been done before signup or create a new subscriber with a free plan if they haven't subscribed yet:</p>
 <pre><code class="language-python">from paddle_subscriptions.services import (
     get_validated_unlinked_transaction, 
     connect_new_user_to_subscription,

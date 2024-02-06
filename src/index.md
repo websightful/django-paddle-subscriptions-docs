@@ -10,7 +10,7 @@ For example, in the EU, VAT is charged based on the customer's location, regardl
 
 Similarly, in the US, sales tax regulations vary from state to state. Resellers like Paddle typically handle sales tax compliance, ensuring that SaaS businesses only collect taxes in the jurisdictions where they are legally required. This can save businesses time and money, as they don't need to maintain their tax expertise or register for sales tax in multiple states.
 
-Django Paddle Subscriptions is a Django app for SaaS projects implementing free and paid subscriptions using [Paddle Billing API](https://developer.paddle.com/). It saves you a month of work on implementation. And it is pretty flexible and configurable to meet your business needs.
+Django Paddle Subscriptions is a Django app for SaaS projects implementing free and paid subscriptions using [Paddle Billing API](https://developer.paddle.com/). It saves you at least a month of work on implementation. And it is pretty flexible and configurable to meet your business needs.
 
 ## Who is it for?
 
@@ -59,10 +59,10 @@ At Paddle, create Products for each subscription plan and one monthly and one ye
 
 At your Django website, fetch all data from Paddle, create subscription plans, and attach the prices to the subscription plans accordingly.
 
-Test these workflows:
+Check these workflows:
 
-- Pricing ➔ Subscription ➔ Registration ➔ Billing history
-- Registration ➔ Pricing ➔ Subscription ➔ Billing history
+- Pricing ➔ Subscription ➔ Signup ➔ Billing history
+- Signup ➔ Pricing ➔ Subscription ➔ Billing history
 - Pausing subscription ➔ Resuming subscription ➔ Cancelling subscription
 - Pausing subscription ➔ Cancelling subscription
 
