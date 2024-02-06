@@ -24,7 +24,6 @@ The Django Paddle Subscriptions app is for business owners and tech entrepreneur
 | Default styling with TailwindCSS          | ✔︎                                              |
 | Translatable                              | ✔︎                                              |
 | Configurable                              | ✔︎                                              |
-| Unlimited SaaS websites                   | ✔︎                                              |
 | Localized pricing widget                  | ✔︎                                              |
 | Offered free and paid plans               | ✔︎                                              |
 | Subscriptions before or after signup      | ✔︎                                              |
