@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Aidas Bendoraitis a.k.a. archatas / DjangoTricks">
+        <link rel="canonical" href="https://archatas.github.io/django-paddle-subscriptions-docs/customization/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Customization - Django Paddle Subscriptions</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Django Paddle Subscriptions</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../getting-started/" class="nav-link">Getting Started</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Customization</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../CHANGELOG/" class="dropdown-item">Changelog</a>
+</li>
+                                    
+<li>
+    <a href="../LICENSE/" class="dropdown-item">License</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../getting-started/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../CHANGELOG/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://websightful.gumroad.com/l/django-paddle-subscriptions" class="nav-link">Buy Now!</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#customization" class="nav-link">Customization</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#conditional-showing-of-the-pricing-widget" class="nav-link">Conditional Showing of the Pricing Widget</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#free-and-custom-plan-call-to-action-urls" class="nav-link">Free and Custom Plan Call-to-action URLs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#display-mode" class="nav-link">Display Mode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#checkout-theme" class="nav-link">Checkout Theme</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#other-checkout-settings" class="nav-link">Other Checkout Settings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pausing-and-cancelling-subscriptions" class="nav-link">Pausing and Cancelling Subscriptions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#administration" class="nav-link">Administration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#templates-and-css" class="nav-link">Templates and CSS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#using-content-security-policy-with-django-csp" class="nav-link">Using Content-Security-Policy with Django-CSP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#support-for-upsells" class="nav-link">Support for Upsells</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="customization">Customization</h1>
+<h2 id="conditional-showing-of-the-pricing-widget">Conditional Showing of the Pricing Widget</h2>
+<p>You can restrict the showing of pricing widget to specific IPs by setting the <code>PADDLE_SUBSCRIPTIONS["RESTRICTED_TO_IPS"]</code> setting:</p>
+<pre><code class="language-python">PADDLE_SUBSCRIPTIONS[&quot;RESTRICTED_TO_IPS&quot;] = [
+    &quot;1.2.3.4&quot;,  # Your public IP address required for the staging or production environment
+    &quot;127.0.0.1&quot;,  # Your local IP address required for the development environment
+]
+</code></pre>
+<p>To find your Public IP address, google for "what's my ip". Note that public IPs change every 2 weeks.</p>
+<p>Then in the templates of use the <code>request.show_paddle_subscriptions</code> to check whether the pricing widget needs to be included:</p>
+<pre><code class="language-django">{% if request.show_paddle_subscriptions %}
+    {% load paddle_subscriptions_tags %}{% paddle_subscriptions_pricing %}
+{% endif %}
+</code></pre>
+<h2 id="free-and-custom-plan-call-to-action-urls">Free and Custom Plan Call-to-action URLs</h2>
+<p>If you have a free plan, set the <code>PADDLE_SUBSCRIPTIONS["FREE_PLAN_CTA_URL"]</code> to a URL path name, path, or a URL of the signup or waitlist page.</p>
+<p>If you have a custom plan, set the <code>PADDLE_SUBSCRIPTIONS["CUSTOM_PRICING_PLAN_CTA_URL"]</code> to a URL path name, path, or a URL of the page with information about it.</p>
+<h2 id="display-mode">Display Mode</h2>
+<p>Set the <code>PADDLE_SUBSCRIPTIONS["CHECKOUT_DISPLAY_MODE"]</code> to <code>"overlay"</code> (default) or <code>"inline"</code> to display the checkout widget as a dialog box or as part of the layout.</p>
+<p>If your display mode is <code>"inline"</code>, the following settings are required too:</p>
+<ul>
+<li><code>PADDLE_SUBSCRIPTIONS["CHECKOUT_FRAME_TARGET"]</code></li>
+<li><code>PADDLE_SUBSCRIPTIONS["CHECKOUT_FRAME_STYLE"]</code></li>
+<li><code>PADDLE_SUBSCRIPTIONS["CHECKOUT_FRAME_INITIAL_HEIGHT"]</code></li>
+</ul>
+<p>Read about them at <a href="https://developer.paddle.com/build/checkout/build-branded-inline-checkout#pass-settings">Paddle Billing documentation</a>.</p>
+<h2 id="checkout-theme">Checkout Theme</h2>
+<p>Set the <code>PADDLE_SUBSCRIPTIONS["CHECKOUT_THEME"]</code> to <code>"light"</code> (default) or <code>"dark"</code> to display light or dark user interface.</p>
+<p>In addition, you can pass a function accepting a <code>request</code> parameter which would return the <code>"light"</code> or <code>"dark"</code> based on user settings or other values:</p>
+<pre><code class="language-python">def get_paddle_subscriptions_theme(request):
+    if request.user.is_authenticated and request.user.theme == request.user.ThemeChoices.DARK:
+        return &quot;dark&quot;
+    return &quot;light&quot;
+
+PADDLE_SUBSCRIPTIONS[&quot;CHECKOUT_THEME&quot;] = get_paddle_subscriptions_theme
+</code></pre>
+<h2 id="other-checkout-settings">Other Checkout Settings</h2>
+<p>The <code>PADDLE_SUBSCRIPTIONS["CHECKOUT_SHOW_ADD_TAX_ID"]</code> setting defines whether the field for a tax number should be shown at checkout (default: True).</p>
+<p>The <code>PADDLE_SUBSCRIPTIONS["CHECKOUT_SHOW_DISCOUNTS"]</code> setting defines whether the field for a discount code should be shown at checkout (default: True).</p>
+<p>Use the <code>PADDLE_SUBSCRIPTIONS["CHECKOUT_SUCCESS_URL_FOR_AUTHENTICATED"]</code> to redirect an authenticated user who has just subscribed to a custom success page. Set the URL path name, path, or URL of that page.</p>
+<p>If you allow the anonymous visitors to subscribe before signing up, set the <code>PADDLE_SUBSCRIPTIONS["CHECKOUT_SUCCESS_URL_FOR_ANONYMOUS"]</code> to your signup page that handles the connecting the subscription by <code>paddle_transaction_id</code> cookie to the newly registered user (default: <code>"/signup/"</code>).</p>
+<h2 id="pausing-and-cancelling-subscriptions">Pausing and Cancelling Subscriptions</h2>
+<p>Set whether subscriptions pausing must happen before the next billing period or immediately with <code>PADDLE_SUBSCRIPTIONS["WHEN_TO_PAUSE_SUBSCRIPTIONS"]</code> and <code>PADDLE_SUBSCRIPTIONS["WHEN_TO_CANCEL_SUBSCRIPTIONS"]</code> settings. Set them to  <code>"next_billing_period"</code> (default) or <code>"immediately"</code>.</p>
+<h2 id="administration">Administration</h2>
+<p>All Paddle Billing models can be fetched to your Django project via management commands, but not all of them are valuable for introspection. Below are the settings of what to show in administration.</p>
+<p>Settings for Paddle Billing models:</p>
+<ul>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_PRODUCT_ADMIN"]</code> (default: True) - show products.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_PRICE_ADMIN"]</code> (default: True) - show prices.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_DISCOUNT_ADMIN"]</code> (default: False) - show discounts.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_CUSTOMER_ADMIN"]</code> (default: True) - show customers.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_ADDRESS_ADMIN"]</code> (default: False) - show addresses.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_BUSINESS_ADMIN"]</code> (default: False) - show businesses.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_TRANSACTION_ADMIN"]</code> (default: True) - show transactions.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_SUBSCRIPTION_ADMIN"]</code> (default: True) - show subscriptions.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_ADJUSTMENT_ADMIN"]</code> (default: False) - show adjustments.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_EVENT_TYPE_ADMIN"]</code> (default: False) - show event types.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_NOTIFICATION_SETTING_ADMIN"]</code> (default: True) - show notification settings (your webhook URLs).</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_NOTIFICATION_ADMIN"]</code> (default: False) - show notifications.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_EVENT_ADMIN"]</code> (default: True) - show events.</li>
+</ul>
+<p>Settings for extra Paddle Subscriptions models:</p>
+<ul>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_WEB_PROJECT_ADMIN"]</code> (default: True) - show web projects when you have more than one SaaS projects using the same Paddle seller's account.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_PRODUCT_CATEGORY_ADMIN"]</code> (default: True) - show product categories to group your products when you have upsells.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_SUBSCRIPTION_PLAN_ADMIN"]</code> (default: True) - show subscription plans.</li>
+<li><code>PADDLE_SUBSCRIPTIONS["SHOW_SUBSCRIBER_ADMIN"]</code> (default: True) - show subscribers.</li>
+</ul>
+<h2 id="templates-and-css">Templates and CSS</h2>
+<p>The default templates are styled using TailwindCSS. To use them, it is recommended to copy them from site-packages into your project, build your CSS and collect translatable strings, and modify them as necessary.</p>
+<p>You can replace the CSS classes and markup to Bootstrap, Foundation, Bulma, other CSS framwork, or your custom CSS too.</p>
+<p>These are the Django Paddle Subscription templates:</p>
+<ul>
+<li><code>paddle_subscriptions/</code><ul>
+<li><code>includes/</code><ul>
+<li><code>billing_dates.html</code> - information about the next billing dates.</li>
+<li><code>js.html</code> - the JavaScripts included for Paddle Billing checkouts.</li>
+<li><code>pagination.html</code> - pagination widget for billing history.</li>
+<li><code>pricing.html</code> - list of all plans.</li>
+<li><code>paid_plans.html</code> - list of paid plans.</li>
+<li><code>plan_overview.html</code> - single plan overview.</li>
+</ul>
+</li>
+<li><code>base.html</code> - base page for subscriptions with the tab navigation.</li>
+<li><code>billing_history.html</code> - billing history with downloadable invoices.</li>
+<li><code>subscribe.html</code> - subscribing to a single plan.</li>
+<li><code>subscription_success.html</code> - success page after successful subscription.</li>
+<li><code>subscription_details.html</code> - main subscription page for registered users showing info about subscription plans or info about the current subscription.</li>
+</ul>
+</li>
+</ul>
+<h2 id="using-content-security-policy-with-django-csp">Using Content-Security-Policy with Django-CSP</h2>
+<p>The Django Paddle Subscriptions app is compatible with Content-Security-Policy via Django-CSP app. To use it, enable nonces for script tags in the project's settings:</p>
+<pre><code class="language-python">CSP_INCLUDE_NONCE_IN = [&quot;script-src&quot;, &quot;style-src&quot;]
+</code></pre>
+<h2 id="support-for-upsells">Support for Upsells</h2>
+<p>Business-oriented SaaS projects allow you to buy extras after a chosen subscription is made. To implement that, you would create extra Products and Prices at Paddle Billing, link the Buy buttons to them, and handle the transactions.</p>
+<p>Use Django signals to add your custom logic to the Django Paddle Subscriptions app. You can either use the builtin <a href="https://docs.djangoproject.com/en/5.0/ref/signals/#post-save"><code>post_save</code></a> signal for that Transaction model, or use the custom <code>webhook_triggered</code> signal that is sent when any successful request from Paddle is sent to the webhook view.</p>
+<p>Here is an example of <code>webhook_triggered</code> signal receiver which logs JSON objects received from Paddle:</p>
+<pre><code class="language-python"># myproject/apps/misc/apps.py
+from django.apps import AppConfig
+from django.utils.translation import gettext_lazy as _
+
+
+def log_webhook_data(sender, **kwargs):
+    import os
+    from django.conf import settings
+    from django.utils.timezone import now
+
+    api_event = kwargs.get(&quot;api_event&quot;)
+
+    with open(os.path.join(settings.BASE_DIR, &quot;logs&quot;, &quot;webhook_data.log&quot;), &quot;a&quot;) as f:
+        f.write(
+f&quot;&quot;&quot;{now():%Y-%m-%d %H:%M:%S} {api_event.event_type}
+{api_event.data.json()}
+
+&quot;&quot;&quot;
+        )
+
+
+class MiscConfig(AppConfig):
+    name = &quot;myproject.apps.misc&quot;
+    verbose_name = _(&quot;Miscellaneous&quot;)
+
+    def ready(self):
+        from paddle_subscriptions.signals import webhook_triggered
+
+        webhook_triggered.connect(log_webhook_data)
+</code></pre>
+<p>Note that you will receive many notifications for a single transaction to become completed, starting with the one with the status "ready" and ending with the one with the status "completed."</p>
+<p>In addition, you can set the JavaScript callback functions at <code>PADDLE_SUBSCRIPTIONS["CHECKOUT_JS_EVENT_CALLBACK"]</code> to handle <a href="https://developer.paddle.com/paddlejs/events/overview">Paddle.js events</a>, or <code>PADDLE_SUBSCRIPTIONS["CHECKOUT_JS_TRANSACTION_COMPLETED_CALLBACK"]</code> to handle successful transaction in the frontend.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

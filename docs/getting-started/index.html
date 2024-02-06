@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Aidas Bendoraitis a.k.a. archatas / DjangoTricks">
+        <link rel="canonical" href="https://archatas.github.io/django-paddle-subscriptions-docs/getting-started/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Getting Started - Django Paddle Subscriptions</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Django Paddle Subscriptions</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Getting Started</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../customization/" class="nav-link">Customization</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../CHANGELOG/" class="dropdown-item">Changelog</a>
+</li>
+                                    
+<li>
+    <a href="../LICENSE/" class="dropdown-item">License</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../customization/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://websightful.gumroad.com/l/django-paddle-subscriptions" class="nav-link">Buy Now!</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#getting-started" class="nav-link">Getting Started</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#how-to-install" class="nav-link">How to Install</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-to-use" class="nav-link">How to Use</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#when-going-live" class="nav-link">When going live</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="getting-started">Getting Started</h1>
+<h2 id="how-to-install">How to Install</h2>
+<h3 id="1-download-and-install-the-package-with-pip">1. Download and install the package with pip</h3>
+<p><a href="https://websightful.gumroad.com/l/django-paddle-subscriptions">Get Django Paddle Subscriptions from Gumroad</a>.</p>
+<p>Create a directory <code>private_wheels/</code> in your project's repository and add the wheel file of the app there.</p>
+<p>Link to this file in your <code>requirements.txt</code>:</p>
+<pre><code>Django==4.2
+file:./private_wheels/django_paddle_subscriptions-1.0.0-py2.py3-none-any.whl
+</code></pre>
+<p>Install the pip requirements from the <code>requirements.txt</code> file into your project's virtual environment:</p>
+<pre><code class="language-shell">(venv)$ pip install -r requirements.txt
+</code></pre>
+<p>Alternatively to start quickly, install the wheel file into your Django project's virtual environment right from the shell:</p>
+<pre><code class="language-shell">(venv)$ pip install /path/to/django_paddle_subscriptions-1.0.0-py2.py3-none-any.whl
+</code></pre>
+<h3 id="2-add-the-app-to-installed_apps-of-your-project-settings">2. Add the app to <code>INSTALLED_APPS</code> of your project settings</h3>
+<pre><code class="language-python">INSTALLED_APPS = [
+    # ...
+    &quot;paddle_subscriptions&quot;,
+]
+</code></pre>
+<h3 id="3-add-subscriptionmiddleware-to-the-middleware-setting">3. Add <code>SubscriptionMiddleware</code> to the <code>MIDDLEWARE</code> setting</h3>
+<pre><code class="language-python">MIDDLEWARE = [
+    # ...
+    &quot;paddle_subscriptions.middleware.SubscriptionMiddleware&quot;,
+]
+</code></pre>
+<p>It will allow to access the current subscriber's data at <code>request.subscriber</code>.</p>
+<h3 id="4-add-paddle_subscriptions-settings">4. Add <code>PADDLE_SUBSCRIPTIONS</code> settings</h3>
+<pre><code class="language-python">PADDLE_SUBSCRIPTIONS = {
+    &quot;API_KEY&quot;: &quot;...&quot;,
+    &quot;PUBLIC_KEY&quot;: &quot;...&quot;,
+    &quot;CLIENT_SIDE_TOKEN&quot;: &quot;...&quot;,
+    &quot;ENVIRONMENT&quot;: &quot;sandbox&quot;,
+    &quot;WEBSITE_URL&quot;: &quot;https://example.com&quot;,
+    # ...
+}
+</code></pre>
+<p><strong>Important note!</strong> Don't commit the keys and tokens to the version control for security reasons!</p>
+<p>Set the setting <code>PADDLE_SUBSCRIPTIONS['RESTRICTED_TO_IPS'] = ['...']</code> to show pricing or other  subscription-related widgets only to visitors from those IPs.</p>
+<h3 id="5-add-a-path-to-urlpatterns">5. Add a path to urlpatterns</h3>
+<pre><code class="language-python">from django.urls import path, include
+
+urlpatterns = [
+    # …
+    path(
+        &quot;subscriptions/&quot;,
+        include(&quot;paddle_subscriptions.urls&quot;, namespace=&quot;paddle_subscriptions&quot;),
+    ),
+]
+</code></pre>
+<h3 id="6-create-paddle-data">6. Create Paddle data</h3>
+<p>In your Django project, create subscription plans with benefits for pricing widgets. If you have a free plan, set the call-to-action URL name at <code>PADDLE_SUBSCRIPTIONS['FREE_PLAN_CTA_URL']</code>, for example, the sign up or waitlist form.</p>
+<p>At Paddle create Products for each paid subscription plan, and monthly and yearly prices for each product. You can skip monthly or yearly pricing if you want, but then you will need to modify the overwritten templates to exclude them there too.</p>
+<p>Deploy the data to a publicly accessible staging or production website. Paddle will send events to that website.</p>
+<h3 id="7-link-paddle-with-your-website">7. Link Paddle with your website</h3>
+<p>Run the management command to fetch Paddle data and install the webhook:</p>
+<pre><code class="language-bash">(venv)$ python manage.py set_up_paddle_subscriptions
+</code></pre>
+<p>The webhook at <code>https://example.com/subscriptions/webhook/</code> will be registered at Paddle and all Paddle events available in the API will be sent to it.</p>
+<p>Then, link your subscription plans with sandbox monthly and yearly prices.</p>
+<p>Also set the default payment link at Paddle (Paddle &gt; Checkout &gt; Checkout settings) to <code>https://example.com/subscriptions/payments/</code>. It will redirect to the correct location based on your SaaS project if you have more than one with the same Paddle account.</p>
+<h3 id="8-create-a-pricing-page">8. Create a pricing page</h3>
+<p>Add the following template tag either on the start page or on a separate pricing page view:</p>
+<pre><code class="language-django">{% load paddle_subscriptions_tags %}
+{% paddle_subscriptions_pricing %}
+</code></pre>
+<h3 id="9-copy-the-templates-to-your-project">9. Copy the templates to your project</h3>
+<p>Copy the templates from <code>paddle_subscriptions/templates</code> in site-packages to your project and adjust them as necessary.</p>
+<p>The copy of the templates serves two purposes: you can collect translatable strings into your project, and you can make the TailwindCSS classes discoverable by your installation.</p>
+<h3 id="10-update-your-signup-and-account-deletion-views">10. Update your signup and account deletion views</h3>
+<p>Your registration view must link to the subscription that has been done before signup or create a new subscriber with a free plan if they haven't subscribed yet:</p>
+<pre><code class="language-python">from paddle_subscriptions.services import (
+    get_validated_unlinked_transaction, 
+    connect_new_user_to_subscription,
+    create_subscriber_for_free_plan, 
+    get_initial_data_for_new_user, 
+)
+
+
+@transaction.atomic
+@never_cache
+def register(request, *arguments, **keywords):
+    &quot;&quot;&quot;
+    Displays the registration form and handles the registration action
+    &quot;&quot;&quot;
+    m = hashlib.md5()
+    m.update(force_bytes(request.META[&quot;REMOTE_ADDR&quot;]))
+    request.session.session_id = m.hexdigest()[:20]
+
+    transaction = None
+    if transaction_id := request.COOKIES.get(&quot;paddle_transaction_id&quot;):
+        transaction = get_validated_unlinked_transaction(transaction_id)
+
+    if request.method == &quot;POST&quot;:
+        form = RegistrationForm(request, request.POST)
+        if form.is_valid():
+            user = form.save()
+
+            if transaction:
+                connect_new_user_to_subscription(user, transaction, subscriber_name=form.cleaned_data[&quot;company_name&quot;])
+            else:
+                create_subscriber_for_free_plan(user, subscriber_name=form.cleaned_data[&quot;company_name&quot;])
+
+            response = redirect(&quot;accounts:register_pending&quot;)
+
+            if transaction:
+                response.delete_cookie(&quot;paddle_transaction_id&quot;)
+
+            return response
+    else:
+        initial = None
+        if transaction:
+            initial = get_initial_data_for_new_user(transaction)
+            initial[&quot;company_name&quot;] = transaction.business.name if transaction.business else &quot;&quot;
+        form = RegistrationForm(request, initial=initial)
+        if transaction:
+            form.fields[&quot;email&quot;].widget.attrs[&quot;readonly&quot;] = True
+
+    request.session.set_test_cookie()
+
+    response = render(
+        request,
+        &quot;accounts/signup.html&quot;,
+        {&quot;form&quot;: form},
+    )
+
+    return response
+
+</code></pre>
+<p>Then your account deletion view must cancel the existing subscription:</p>
+<pre><code class="language-python">from paddle_subscriptions.services import cancel_subscription
+
+
+@login_required
+def delete_account(request):
+    context = {}
+    if (
+        request.user.is_authenticated
+        and not request.user.is_staff
+        and request.method == &quot;POST&quot;
+    ):
+        form = DeleteAccountForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            user = request.user
+
+            if subscription := request.subscriber.current_subscription:
+                cancel_subscription(subscription, effective_from=&quot;immediately&quot;)
+            if request.subscriber.membership_set.count() == 1:
+                request.subscriber.delete()
+
+            auth_logout(request)
+            form.delete()
+
+            response = redirect(&quot;accounts:delete_account_complete&quot;)
+            return response
+    else:
+        form = DeleteAccountForm(user=request.user)
+    context[&quot;form&quot;] = form
+    return render(request, &quot;accounts/delete_account.html&quot;, context)
+</code></pre>
+<h2 id="how-to-use">How to Use</h2>
+<h3 id="1-the-subscription-details-page">1. The subscription details page</h3>
+<p>The page at <code>https://example.com/subscriptions/</code> allows you to subscribe to a paid plan or view the details of your current subscription.</p>
+<p>Use the <code>{% url "paddle_subscriptions:subscription_details" %}</code> in the templates to link to that page.</p>
+<p>Test the pausing, resuming, and cancelling subscriptions there. Also test the billing history and invoices.</p>
+<h3 id="2-check-subscriber-status-in-views-or-templates">2. Check subscriber status in views or templates</h3>
+<p>These are some common values that might be interesting in your views and templates about the current subscriber:</p>
+<pre><code class="language-python"># The slug of the current subscriber's subscription plan
+request.subscriber.plan.slug
+
+# Does the current subscriber have free access to their subscription plan?
+# (the plan itself is free or the subscriber has an exclusive manually set free access)
+request.subscriber.has_free_access
+
+# Is the current subscription active?
+request.subscriber.is_subscription_active
+
+# Will the current subscription be paused at the end of the billing cycle?
+request.subscriber.is_subscription_to_be_paused
+
+# Is the current subscription paused at the moment?
+request.subscriber.is_subscription_paused
+
+# Will the current subscription be cancelled at the end of the billing cycle?
+request.subscriber.is_subscription_to_be_cancelled
+
+# Is the current subscription cancelled at the moment?
+# (only possible for pricing without a free plan)
+request.subscriber.is_subscription_cancelled
+</code></pre>
+<h3 id="3-translate-the-strings-in-your-templates">3. Translate the strings in your templates</h3>
+<p>If your website has more than one language, prepare the translations:</p>
+<ul>
+<li>Use management command <code>makemessages</code> to collect translatable strings into <code>django.po</code> files.</li>
+<li>Translate the strings to the languages you need.</li>
+<li>Then, use the management command <code>compilemessages</code> to compile them to <code>django.mo</code> files.</li>
+</ul>
+<h2 id="when-going-live">When going live</h2>
+<p>Paddle has an extensive <a href="https://developer.paddle.com/build/onboarding/set-up-checklist">list of steps about going live</a>. Read it thoroughly. What relates to Django Paddle Subscriptions follows:</p>
+<h3 id="1-set-paddle-environment-to-live">1. Set Paddle environment to live</h3>
+<p>Set the environment to "live":</p>
+<pre><code class="language-python">PADDLE_SUBSCRIPTIONS[&quot;ENVIRONMENT&quot;] = &quot;live&quot;
+</code></pre>
+<p>Make sure that <code>PADDLE_SUBSCRIPTIONS["WEBSITE_URL"]</code> points to the URL of the production website, which has to be approved by Paddle.</p>
+<p>Remove the <code>PADDLE_SUBSCRIPTIONS['RESTRICTED_TO_IPS']</code> setting.</p>
+<h3 id="2-flush-staging-data-and-set-up-paddle-subscription-anew">2. Flush staging data and set up Paddle subscription anew</h3>
+<pre><code class="language-bash">(venv)$ python manage.py flush_paddle_billing_models
+(venv)$ python manage.py set_up_paddle_subscriptions
+</code></pre>
+<p>Then, link your subscription plans with live monthly and yearly prices.</p>
+<h3 id="3-test-live-payments-and-subscriptions">3. Test live payments and subscriptions</h3>
+<p>Create a 100% discount code on the Paddle live environment and test your subscriptions with that code.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

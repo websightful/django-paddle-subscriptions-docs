@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Django Paddle Subscriptions Documentation">
+        <meta name="author" content="Aidas Bendoraitis a.k.a. archatas / DjangoTricks">
+        <link rel="canonical" href="https://archatas.github.io/django-paddle-subscriptions-docs/">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Django Paddle Subscriptions</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Django Paddle Subscriptions</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="getting-started/" class="nav-link">Getting Started</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="customization/" class="nav-link">Customization</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="CHANGELOG/" class="dropdown-item">Changelog</a>
+</li>
+                                    
+<li>
+    <a href="LICENSE/" class="dropdown-item">License</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="getting-started/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://websightful.gumroad.com/l/django-paddle-subscriptions" class="nav-link">Buy Now!</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#django-paddle-subscriptions" class="nav-link">Django Paddle Subscriptions</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#why-do-you-need-it" class="nav-link">Why do you need it?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#who-is-it-for" class="nav-link">Who is it for?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#what-are-the-benefits" class="nav-link">What are the benefits?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-does-it-work" class="nav-link">How does it work?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#examples" class="nav-link">Examples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#credits" class="nav-link">Credits</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#disclaimer" class="nav-link">Disclaimer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#contact" class="nav-link">Contact</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="django-paddle-subscriptions">Django Paddle Subscriptions</h1>
+<h2 id="why-do-you-need-it">Why do you need it?</h2>
+<p>For SaaS (Software as a Service) businesses expanding into global markets, partnering with a reseller like <a href="https://www.paddle.com/">Paddle</a> can be a strategic move to navigate complex tax regulations and streamline operations. Resellers like Paddle act as intermediaries, handling payments, tax compliance, and currency conversions, for their partners, freeing up SaaS companies to focus on their core product offerings.</p>
+<p>The rules for VAT (Value Added Tax) and sales tax are varied from country to country.</p>
+<p>For example, in the EU, VAT is charged based on the customer's location, regardless of the SaaS provider's headquarters. This means that SaaS businesses outside the EU may need to register for VAT to collect and remit taxes. Paddle simplifies this process by registering for VAT on behalf of its partners and automatically collecting the appropriate tax from each customer.</p>
+<p>Similarly, in the US, sales tax regulations vary from state to state. Resellers like Paddle typically handle sales tax compliance, ensuring that SaaS businesses only collect taxes in the jurisdictions where they are legally required. This can save businesses time and money, as they don't need to maintain their tax expertise or register for sales tax in multiple states.</p>
+<p>Django Paddle Subscriptions is a Django app for SaaS projects implementing free and paid subscriptions using <a href="https://developer.paddle.com/">Paddle Billing API</a>. It saves you a month of work on implementation. And it is pretty flexible and configurable to meet your business needs.</p>
+<h2 id="who-is-it-for">Who is it for?</h2>
+<p>The Django Paddle Subscriptions app is for business owners and tech entrepreneurs who want to provide Django-based SaaS globally.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported modern browsers</td>
+<td>Chrome, Firefox, Safari, Opera, Microsoft Edge</td>
+</tr>
+<tr>
+<td>Supported Django versions</td>
+<td>4.2, 5.0</td>
+</tr>
+<tr>
+<td>Supported Python versions</td>
+<td>3.10, 3.11, 3.12</td>
+</tr>
+<tr>
+<td>Default styling with TailwindCSS</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Translatable</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Configurable</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Unlimited websites</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Localized pricing widget</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Offerred free and paid plans</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Subscriptions before or after signup</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Monthly and yearly pricing</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>List of paid invoices</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Pausing and cancelling subscriptions</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Copy of Paddle data in your database</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Multiple SaaS with the same Paddle account</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Infrastructure for upsells</td>
+<td>✔︎</td>
+</tr>
+<tr>
+<td>Latest package version</td>
+<td>1.0.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-are-the-benefits">What are the benefits?</h2>
+<p>There are lots of benefits:</p>
+<ul>
+<li>Saves at least a month of development work.</li>
+<li>Highly flexible and configurable.</li>
+<li>Can be used for as many Django-based SaaS projects as necessary.</li>
+<li>The frontend is styled with TailwindCSS for quick start, but you can overwrite the templates and introduce your custom styling.</li>
+<li>Comes with handy management commands to fetch Paddle data and set up the environment.</li>
+<li>Allows using the same Paddle account for multiple Django-based SaaS projects.</li>
+<li>Developed with internationalization in mind.</li>
+<li>Compatible with Content-Security-Policy via Django-CSP.</li>
+<li>MIT license applied.</li>
+<li>Designed and implemented by the author of "Web development with Django Cookbook."</li>
+</ul>
+<h2 id="how-does-it-work">How does it work?</h2>
+<p>You will need a seller's account at Paddle and your business and SaaS domains approved (which might take from a few days to two weeks). At first, implement the payments in the <a href="https://sandbox-vendors.paddle.com/">sandbox environment</a>.</p>
+<p>At Paddle, create Products for each subscription plan and one monthly and one yearly price for each plan. For example, Premium plan as a product will have two prices: Premium monthly and Premium yearly.</p>
+<p>At your Django website, fetch all data from Paddle, create subscription plans, and attach the prices to the subscription plans accordingly.</p>
+<p>Test these workflows:</p>
+<ul>
+<li>Pricing ➔ Subscription ➔ Registration ➔ Billing history</li>
+<li>Registration ➔ Pricing ➔ Subscription ➔ Billing history</li>
+<li>Pausing subscription ➔ Resuming subscription ➔ Cancelling subscription</li>
+<li>Pausing subscription ➔ Cancelling subscription</li>
+</ul>
+<p>When ready to go live, create the same products and prices at the <a href="https://vendors.paddle.com/">live environment</a>. Flush the Paddle data on your server, fetch the data from the live server, and connect the prices to your subscription plans. Create a 100% discount code and test subscriptions with that code on the live environment.</p>
+<h2 id="examples">Examples</h2>
+<p>Django Paddle Subscriptions are used in production at these websites:</p>
+<ul>
+<li><a href="https://www.1st-things-1st.com">1st things 1st</a></li>
+<li><a href="https://remember-your-people.app/">Remember Your People</a></li>
+</ul>
+<h2 id="credits">Credits</h2>
+<p>The Django Paddle Subscriptions app under the hood uses <a href="https://github.com/websideproject/paddle-billing-client">paddle-billing-client</a>, which was thoroughly crafted by Benjamin Gervan.</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>Django Paddle Subscriptions app is provided without any warranties or guarantees, either explicit or implied.</p>
+<p>The user is responsible for using the app responsibly and in compliance with all applicable laws and regulations. The user is also solely responsible for any financial losses or other issues that may arise from using the app.</p>
+<p>By using this app, the user agrees to indemnify and hold harmless the app's author from any claims, damages, losses, liabilities, costs, or expenses (including reasonable attorney's fees) arising from or in connection with the app's use or misuse.</p>
+<h2 id="contact">Contact</h2>
+<p>For technical questions, feature requests, or bug reports, please contact Aidas Bendoraitis at <a href="https://www.djangotricks.com/feedback/">https://www.djangotricks.com/feedback/</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2024-02-06 05:27:51.118515+00:00
+-->
