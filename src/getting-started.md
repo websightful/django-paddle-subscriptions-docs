@@ -90,7 +90,7 @@ Deploy the data to a publicly accessible staging or production website. Paddle w
 
 Run the management command to fetch Paddle data and install the webhook:
 
-```bash
+```shell
 (venv)$ python manage.py set_up_paddle_subscriptions
 ```
 

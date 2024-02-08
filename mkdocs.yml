@@ -6,11 +6,14 @@ docs_dir: src
 site_dir: docs
 repo_url: https://websightful.gumroad.com/l/django-paddle-subscriptions
 repo_name: Buy Now!
+extra_css:
+  - css/style.css
 
 nav:
     - Home: 'index.md'
+    - Screenshots: 'screenshots.md'
     - Getting Started: 'getting-started.md'
-    - Customization: 'customization.md'
     - 'More':
+        - Customization: 'customization.md'
         - Changelog: 'CHANGELOG.md'
         - License: 'LICENSE.md'
