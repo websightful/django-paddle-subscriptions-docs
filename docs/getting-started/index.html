@@ -13,6 +13,7 @@
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../css/style.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
@@ -33,18 +34,19 @@
                             <li class="navitem">
                                 <a href=".." class="nav-link">Home</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Getting Started</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../customization/" class="nav-link">Customization</a>
-                            </li>
                             <li class="navitem">
                                 <a href="../screenshots/" class="nav-link">Screenshots</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Getting Started</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../customization/" class="dropdown-item">Customization</a>
+</li>
                                     
 <li>
     <a href="../CHANGELOG/" class="dropdown-item">Changelog</a>
@@ -64,7 +66,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../screenshots/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -172,7 +174,7 @@ urlpatterns = [
 <p>Deploy the data to a publicly accessible staging or production website. Paddle will send events to that website.</p>
 <h3 id="7-link-paddle-with-your-website">7. Link Paddle with your website</h3>
 <p>Run the management command to fetch Paddle data and install the webhook:</p>
-<pre><code class="language-bash">(venv)$ python manage.py set_up_paddle_subscriptions
+<pre><code class="language-shell">(venv)$ python manage.py set_up_paddle_subscriptions
 </code></pre>
 <p>The webhook at <code>https://example.com/subscriptions/webhook/</code> will be registered at Paddle and all Paddle events available in the API will be sent to it.</p>
 <p>Then, link your subscription plans with sandbox monthly and yearly prices.</p>
