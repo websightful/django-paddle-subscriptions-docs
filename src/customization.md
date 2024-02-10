@@ -11,7 +11,7 @@ PADDLE_SUBSCRIPTIONS["RESTRICTED_TO_IPS"] = [
 ]
 ```
 
-To find your Public IP address, google for "what's my ip". Note that public IPs change every 2 weeks.
+To find your Public IP address, google for "what's my ip". Note that the public IP of a router changes every 2 weeks.
 
 Then in the templates of use the `request.show_paddle_subscriptions` to check whether the pricing widget needs to be included:
 
