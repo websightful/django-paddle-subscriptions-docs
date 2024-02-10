@@ -2,13 +2,15 @@
 
 ## Why do you need it?
 
-For SaaS (Software as a Service) businesses expanding into global markets, partnering with a reseller like [Paddle](https://www.paddle.com/) can be a strategic move to navigate complex tax regulations and streamline operations. Resellers like Paddle act as intermediaries, handling payments, tax compliance, and currency conversions, for their partners, freeing up SaaS companies to focus on their core product offerings.
+For SaaS (Software as a Service) businesses expanding into global markets, partnering with a reseller like [Paddle](https://www.paddle.com/) can be a strategic move to navigate complex tax regulations and streamline operations. Resellers like Paddle act as intermediaries, handling payments, tax compliance, currency conversions, and localized pricing for their partners, freeing up SaaS companies to focus on their core product offerings.
 
 The rules for VAT (Value Added Tax) and sales tax are varied from country to country.
 
 For example, in the EU, VAT is charged based on the customer's location, regardless of the SaaS provider's headquarters. This means that SaaS businesses outside the EU may need to register for VAT to collect and remit taxes. Paddle simplifies this process by registering for VAT on behalf of its partners and automatically collecting the appropriate tax from each customer.
 
 Similarly, in the US, sales tax regulations vary from state to state. Resellers like Paddle typically handle sales tax compliance, ensuring that SaaS businesses only collect taxes in the jurisdictions where they are legally required. This can save businesses time and money, as they don't need to maintain their tax expertise or register for sales tax in multiple states.
+
+Also, buying power varies greatly between different countries around the world. In wealthier countries like the United States and Western Europe, people generally have more money to spend due to higher incomes and stronger currencies. However, in less developed countries across Africa, Asia, and parts of Latin America, buying power tends to be lower because people earn less money and the cost of living is often higher relative to their incomes.
 
 Django Paddle Subscriptions is a Django app for SaaS projects implementing free and paid subscriptions using [Paddle Billing API](https://developer.paddle.com/). It saves you at least a month of work on implementation. And it is pretty flexible and configurable to meet your business needs.
 
