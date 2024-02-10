@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Django Paddle Subscriptions Documentation">
         <meta name="author" content="Aidas Bendoraitis a.k.a. archatas / DjangoTricks">
-        <link rel="canonical" href="https://archatas.github.io/django-paddle-subscriptions-docs/">
+        <link rel="canonical" href="https://websightful.github.io/django-paddle-subscriptions-docs/">
         <link rel="shortcut icon" href="img/favicon.ico">
         <title>Django Paddle Subscriptions</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -139,10 +139,11 @@
 
 <h1 id="django-paddle-subscriptions">Django Paddle Subscriptions</h1>
 <h2 id="why-do-you-need-it">Why do you need it?</h2>
-<p>For SaaS (Software as a Service) businesses expanding into global markets, partnering with a reseller like <a href="https://www.paddle.com/">Paddle</a> can be a strategic move to navigate complex tax regulations and streamline operations. Resellers like Paddle act as intermediaries, handling payments, tax compliance, and currency conversions, for their partners, freeing up SaaS companies to focus on their core product offerings.</p>
+<p>For SaaS (Software as a Service) businesses expanding into global markets, partnering with a reseller like <a href="https://www.paddle.com/">Paddle</a> can be a strategic move to navigate complex tax regulations and streamline operations. Resellers like Paddle act as intermediaries, handling payments, tax compliance, currency conversions, and localized pricing for their partners, freeing up SaaS companies to focus on their core product offerings.</p>
 <p>The rules for VAT (Value Added Tax) and sales tax are varied from country to country.</p>
 <p>For example, in the EU, VAT is charged based on the customer's location, regardless of the SaaS provider's headquarters. This means that SaaS businesses outside the EU may need to register for VAT to collect and remit taxes. Paddle simplifies this process by registering for VAT on behalf of its partners and automatically collecting the appropriate tax from each customer.</p>
 <p>Similarly, in the US, sales tax regulations vary from state to state. Resellers like Paddle typically handle sales tax compliance, ensuring that SaaS businesses only collect taxes in the jurisdictions where they are legally required. This can save businesses time and money, as they don't need to maintain their tax expertise or register for sales tax in multiple states.</p>
+<p>Also, buying power varies greatly between different countries around the world. In wealthier countries like the United States and Western Europe, people generally have more money to spend due to higher incomes and stronger currencies. However, in less developed countries across Africa, Asia, and parts of Latin America, buying power tends to be lower because people earn less money and the cost of living is often higher relative to their incomes.</p>
 <p>Django Paddle Subscriptions is a Django app for SaaS projects implementing free and paid subscriptions using <a href="https://developer.paddle.com/">Paddle Billing API</a>. It saves you at least a month of work on implementation. And it is pretty flexible and configurable to meet your business needs.</p>
 <h2 id="who-is-it-for">Who is it for?</h2>
 <p>The Django Paddle Subscriptions app is for business owners and tech entrepreneurs who want to provide Django-based SaaS globally.</p>
@@ -216,7 +217,7 @@
 </tr>
 <tr>
 <td>Latest package version</td>
-<td>1.2.0</td>
+<td>1.0.0</td>
 </tr>
 </tbody>
 </table>
@@ -254,6 +255,7 @@
 </ul>
 <h2 id="credits">Credits</h2>
 <p>The Django Paddle Subscriptions app under the hood uses <a href="https://github.com/websideproject/paddle-billing-client">paddle-billing-client</a>, which was thoroughly crafted by Benjamin Gervan.</p>
+<p>In addition to that, Django Paddle Subscriptions uses <a href="https://pypi.org/project/currencies/">currencies</a>, <a href="https://github.com/un33k/django-ipware">django-ipware</a>, and <a href="https://pypi.org/project/func-timeout/">func-timeout</a>.</p>
 <h2 id="disclaimer">Disclaimer</h2>
 <p>Django Paddle Subscriptions app is provided without any warranties or guarantees, either explicit or implied.</p>
 <p>The user is responsible for using the app responsibly and in compliance with all applicable laws and regulations. The user is also solely responsible for any financial losses or other issues that may arise from using the app.</p>
@@ -342,5 +344,5 @@
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2024-02-08 12:19:36.835421+00:00
+Build Date UTC : 2024-02-10 19:17:32.644104+00:00
 -->
