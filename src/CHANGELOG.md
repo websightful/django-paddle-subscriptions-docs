@@ -11,6 +11,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+[v1.2.0] - 2024-02-10
+------------------
+
+### Added
+
+- Templates added
+- Markdown files added
+
+[v1.1.0] - 2024-02-10
+------------------
+
 ### Changed
 
 - Functions refactored.
