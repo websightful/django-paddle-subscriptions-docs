@@ -153,7 +153,7 @@
     &quot;127.0.0.1&quot;,  # Your local IP address required for the development environment
 ]
 </code></pre>
-<p>To find your Public IP address, google for "what's my ip". Note that public IPs change every 2 weeks.</p>
+<p>To find your Public IP address, google for "what's my ip". Note that the public IP of a router changes every 2 weeks.</p>
 <p>Then in the templates of use the <code>request.show_paddle_subscriptions</code> to check whether the pricing widget needs to be included:</p>
 <pre><code class="language-django">{% if request.show_paddle_subscriptions %}
     {% load paddle_subscriptions_tags %}{% paddle_subscriptions_pricing %}
