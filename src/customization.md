@@ -6,7 +6,7 @@ You can restrict the showing of pricing widget to specific IPs by setting the `P
 
 ```python
 PADDLE_SUBSCRIPTIONS["RESTRICTED_TO_IPS"] = [
-    "1.2.3.4",  # Your public IP address required for the staging or production environment
+    "192.0.2.1",  # Your public IP address required for the staging or production environment
     "127.0.0.1",  # Your local IP address required for the development environment
 ]
 ```
