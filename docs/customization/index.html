@@ -251,19 +251,22 @@ from django.utils.translation import gettext_lazy as _
 
 def log_webhook_data(sender, **kwargs):
     import os
+    import json
     from django.conf import settings
     from django.utils.timezone import now
 
     api_event = kwargs.get(&quot;api_event&quot;)
-
-    with open(os.path.join(settings.BASE_DIR, &quot;logs&quot;, &quot;webhook_data.log&quot;), &quot;a&quot;) as f:
+    json_data = (
+        api_event.data.model_dump_json()
+        if hasattr(api_event.data, &quot;model_dump_json&quot;)
+        else json.dumps(api_event.data)
+    )
+    with open(os.path.join(settings.BASE_DIR, &quot;webhook_data.log&quot;), &quot;a&quot;) as f:
         f.write(
 f&quot;&quot;&quot;{now():%Y-%m-%d %H:%M:%S} {api_event.event_type}
-{api_event.data.json()}
-
+{json_data}
 &quot;&quot;&quot;
         )
-
 
 class MiscConfig(AppConfig):
     name = &quot;myproject.apps.misc&quot;
