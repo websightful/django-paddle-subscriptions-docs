@@ -274,7 +274,7 @@ PADDLE_SUBSCRIPTIONS["ENVIRONMENT"] = "live"
 
 Make sure that `PADDLE_SUBSCRIPTIONS["WEBSITE_URL"]` points to the URL of the production website, which has to be approved by Paddle.
 
-Remove the `PADDLE_SUBSCRIPTIONS['RESTRICTED_TO_IPS']` setting.
+Remove the `PADDLE_SUBSCRIPTIONS["RESTRICTED_TO_IPS"]` setting.
 
 ### 2. Flush staging data and set up Paddle subscription anew
 

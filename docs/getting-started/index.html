@@ -322,7 +322,7 @@ request.subscriber.is_subscription_cancelled
 <pre><code class="language-python">PADDLE_SUBSCRIPTIONS[&quot;ENVIRONMENT&quot;] = &quot;live&quot;
 </code></pre>
 <p>Make sure that <code>PADDLE_SUBSCRIPTIONS["WEBSITE_URL"]</code> points to the URL of the production website, which has to be approved by Paddle.</p>
-<p>Remove the <code>PADDLE_SUBSCRIPTIONS['RESTRICTED_TO_IPS']</code> setting.</p>
+<p>Remove the <code>PADDLE_SUBSCRIPTIONS["RESTRICTED_TO_IPS"]</code> setting.</p>
 <h3 id="2-flush-staging-data-and-set-up-paddle-subscription-anew">2. Flush staging data and set up Paddle subscription anew</h3>
 <pre><code class="language-bash">(venv)$ python manage.py flush_paddle_billing_models
 (venv)$ python manage.py set_up_paddle_subscriptions
