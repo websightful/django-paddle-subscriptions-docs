@@ -157,37 +157,45 @@ file:./private_wheels/django_paddle_subscriptions-1.3.0-py2.py3-none-any.whl
 </code></pre>
 <p><strong>Important note!</strong> Don't commit the keys and tokens to the version control for security reasons!</p>
 <p>Set the setting <code>PADDLE_SUBSCRIPTIONS['RESTRICTED_TO_IPS'] = ['...']</code> to show pricing or other  subscription-related widgets only to visitors from those IPs.</p>
-<h3 id="5-add-a-path-to-urlpatterns">5. Add a path to urlpatterns</h3>
+<h3 id="5-add-settings-for-paypal">5. Add settings for PayPal</h3>
+<p>If you use PayPal as one of the alowed payment gateways, add these settings:</p>
+<pre><code class="language-python">MIDDLEWARE = [
+    # ...
+    &quot;django.middleware.security.SecurityMiddleware&quot;,
+]
+SECURE_CROSS_ORIGIN_OPENER_POLICY = &quot;unsafe-none&quot;
+</code></pre>
+<h3 id="6-add-a-path-to-urlpatterns">6. Add a path to urlpatterns</h3>
 <pre><code class="language-python">from django.urls import path, include
 
 urlpatterns = [
-    # …
+    # ...
     path(
         &quot;subscriptions/&quot;,
         include(&quot;paddle_subscriptions.urls&quot;, namespace=&quot;paddle_subscriptions&quot;),
     ),
 ]
 </code></pre>
-<h3 id="6-create-paddle-data">6. Create Paddle data</h3>
+<h3 id="7-create-paddle-data">7. Create Paddle data</h3>
 <p>In your Django project, create subscription plans with benefits for pricing widgets. If you have a free plan, set the call-to-action URL name at <code>PADDLE_SUBSCRIPTIONS['FREE_PLAN_CTA_URL']</code>, for example, the sign up or waitlist form.</p>
 <p>At Paddle create Products for each paid subscription plan, and monthly and yearly prices for each product. You can skip monthly or yearly pricing if you want, but then you will need to modify the overwritten templates to exclude them there too.</p>
 <p>Deploy the data to a publicly accessible staging or production website. Paddle will send events to that website.</p>
-<h3 id="7-link-paddle-with-your-website">7. Link Paddle with your website</h3>
+<h3 id="8-link-paddle-with-your-website">8. Link Paddle with your website</h3>
 <p>Run the management command to fetch Paddle data and install the webhook:</p>
 <pre><code class="language-shell">(venv)$ python manage.py set_up_paddle_subscriptions
 </code></pre>
 <p>The webhook at <code>https://example.com/subscriptions/webhook/</code> will be registered at Paddle and all Paddle events available in the API will be sent to it.</p>
 <p>Then, link your subscription plans with sandbox monthly and yearly prices.</p>
 <p>Also set the default payment link at Paddle (Paddle ➔ Checkout ➔ Checkout settings) to <code>https://example.com/subscriptions/payments/</code>. It will redirect to the correct location based on your SaaS project if you have more than one with the same Paddle account.</p>
-<h3 id="8-create-a-pricing-page">8. Create a pricing page</h3>
+<h3 id="9-create-a-pricing-page">9. Create a pricing page</h3>
 <p>Add the following template tag either on the start page or on a separate pricing page view:</p>
 <pre><code class="language-django">{% load paddle_subscriptions_tags %}
 {% paddle_subscriptions_pricing %}
 </code></pre>
-<h3 id="9-copy-the-templates-to-your-project">9. Copy the templates to your project</h3>
+<h3 id="10-copy-the-templates-to-your-project">10. Copy the templates to your project</h3>
 <p>Copy the templates from <code>paddle_subscriptions/templates</code> in site-packages to your project and adjust them as necessary.</p>
 <p>The copy of the templates serves two purposes: you can collect translatable strings into your project, and you can make the TailwindCSS classes discoverable by your installation.</p>
-<h3 id="10-update-your-signup-and-account-deletion-views">10. Update your signup and account deletion views</h3>
+<h3 id="11-update-your-signup-and-account-deletion-views">11. Update your signup and account deletion views</h3>
 <p>Your Signup view must link to the subscription that has been done before signup or create a new subscriber with a free plan if they haven't subscribed yet:</p>
 <pre><code class="language-python">from paddle_subscriptions.services import (
     get_validated_unlinked_transaction, 

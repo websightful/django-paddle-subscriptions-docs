@@ -64,13 +64,25 @@ __Important note!__ Don't commit the keys and tokens to the version control for 
 
 Set the setting `PADDLE_SUBSCRIPTIONS['RESTRICTED_TO_IPS'] = ['...']` to show pricing or other  subscription-related widgets only to visitors from those IPs.
 
-### 5. Add a path to urlpatterns
+### 5. Add settings for PayPal
+
+If you use PayPal as one of the alowed payment gateways, add these settings:
+
+```python
+MIDDLEWARE = [
+    # ...
+    "django.middleware.security.SecurityMiddleware",
+]
+SECURE_CROSS_ORIGIN_OPENER_POLICY = "unsafe-none"
+```
+
+### 6. Add a path to urlpatterns
 
 ```python
 from django.urls import path, include
 
 urlpatterns = [
-    # …
+    # ...
     path(
         "subscriptions/",
         include("paddle_subscriptions.urls", namespace="paddle_subscriptions"),
@@ -78,7 +90,7 @@ urlpatterns = [
 ]
 ```
 
-### 6. Create Paddle data
+### 7. Create Paddle data
 
 In your Django project, create subscription plans with benefits for pricing widgets. If you have a free plan, set the call-to-action URL name at `PADDLE_SUBSCRIPTIONS['FREE_PLAN_CTA_URL']`, for example, the sign up or waitlist form.
 
@@ -86,7 +98,7 @@ At Paddle create Products for each paid subscription plan, and monthly and yearl
 
 Deploy the data to a publicly accessible staging or production website. Paddle will send events to that website.
 
-### 7. Link Paddle with your website
+### 8. Link Paddle with your website
 
 Run the management command to fetch Paddle data and install the webhook:
 
@@ -100,7 +112,7 @@ Then, link your subscription plans with sandbox monthly and yearly prices.
 
 Also set the default payment link at Paddle (Paddle ➔ Checkout ➔ Checkout settings) to `https://example.com/subscriptions/payments/`. It will redirect to the correct location based on your SaaS project if you have more than one with the same Paddle account.
 
-### 8. Create a pricing page
+### 9. Create a pricing page
 
 Add the following template tag either on the start page or on a separate pricing page view:
 
@@ -109,13 +121,13 @@ Add the following template tag either on the start page or on a separate pricing
 {% paddle_subscriptions_pricing %}
 ```
 
-### 9. Copy the templates to your project
+### 10. Copy the templates to your project
 
 Copy the templates from `paddle_subscriptions/templates` in site-packages to your project and adjust them as necessary.
 
 The copy of the templates serves two purposes: you can collect translatable strings into your project, and you can make the TailwindCSS classes discoverable by your installation.
 
-### 10. Update your signup and account deletion views
+### 11. Update your signup and account deletion views
 
 Your Signup view must link to the subscription that has been done before signup or create a new subscriber with a free plan if they haven't subscribed yet:
 
