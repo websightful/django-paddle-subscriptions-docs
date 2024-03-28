@@ -16,9 +16,9 @@
 
 ![Current status](screenshots/03_subscription_details.png)
 
-### Paused Subscription
+### Pausing Subscription
 
-![Paused subscription](screenshots/04_paused_subscription.png)
+![Pausing subscription](screenshots/04_pausing_subscription.png)
 
 ## Billing History
 
