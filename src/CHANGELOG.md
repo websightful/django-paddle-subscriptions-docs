@@ -11,6 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+[v1.3.3] - 2024-06-28
+------------------
+
+### Fixes
+
+- Showing nice transaction details for fully discounted transactions.
+- Showing prices for fully discounted transactions in the transaction history view.
+
 [v1.3.2] - 2024-02-14
 ------------------
 
