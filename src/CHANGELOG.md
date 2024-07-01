@@ -11,6 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+[v1.4.1] - 2024-07-01
+------------------
+
+### Changed
+
+- The paddle-billing-client version requirements updated.
+
+
 [v1.4.0] - 2024-06-29
 ------------------
 
