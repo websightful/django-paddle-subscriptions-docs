@@ -12,7 +12,7 @@ Link to this file in your `requirements.txt`:
 
 ```
 Django==4.2
-file:./private_wheels/django_paddle_subscriptions-2.0.2-py2.py3-none-any.whl
+file:./private_wheels/django_paddle_subscriptions-1.4.1-py2.py3-none-any.whl
 ```
 
 Install the pip requirements from the `requirements.txt` file into your project's virtual environment:
@@ -24,7 +24,7 @@ Install the pip requirements from the `requirements.txt` file into your project'
 Alternatively to start quickly, install the wheel file into your Django project's virtual environment right from the shell:
 
 ```shell
-(venv)$ pip install /path/to/django_paddle_subscriptions-2.0.2-py2.py3-none-any.whl
+(venv)$ pip install /path/to/django_paddle_subscriptions-1.4.1-py2.py3-none-any.whl
 ```
 
 ### 2. Add the app to `INSTALLED_APPS` of your project settings
@@ -76,21 +76,24 @@ MIDDLEWARE = [
 SECURE_CROSS_ORIGIN_OPENER_POLICY = "unsafe-none"
 ```
 
-### 6. Add a path to urlpatterns
+### 6. Add paths to urlpatterns
 
 ```python
 from django.urls import path, include
 
 urlpatterns = [
     # ...
+    # Common views, such as webhook
     path(
         "paddle/",
         include("paddle_subscriptions.urls", namespace="paddle_subscriptions"),
     ),
+    # Subscription-related views
     path(
         "subscriptions/",
         include("paddle_subscriptions.urls.subscriptions", namespace="paddle_subscriptions_subscriptions"),
     ),
+    # Non-recurring-purchase-related views
     path(
         "purchases/",
         include("paddle_subscriptions.urls.purchases", namespace="paddle_subscriptions_purchases"),
