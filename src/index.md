@@ -35,7 +35,7 @@ The Django Paddle Subscriptions app is for business owners and tech entrepreneur
 | Copy of Paddle data in your database      | ✔︎                                              |
 | Multiple SaaS with the same Paddle account| ✔︎                                              |
 | Infrastructure for upsells                | ✔︎                                              |
-| Latest package version                    | 1.4.1                                          |
+| Latest package version                    | 2.0.2                                          |
 
 ## What are the benefits?
 

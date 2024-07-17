@@ -11,6 +11,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+[v2.0.2] - 2024-07-17
+------------------
+
+### Changed
+
+- Catching an error of mixmatched transactions.
+
+[v2.0.1] - 2024-07-15
+------------------
+
+### Fixed
+
+- Don't show the next billing date if the current plan is free.
+
+[v2.0.0] - 2024-07-14
+------------------
+
+### Added
+
+- Buying non-recurring digital products.
+
+### Changed
+
+- List administration made more user-friendly.
+- Template tags allow setting a custom template.
+- Separation of subscriptions and purchases.
+
 [v1.4.1] - 2024-07-01
 ------------------
 

@@ -15,5 +15,6 @@ nav:
     - Getting Started: 'getting-started.md'
     - 'More':
         - Customization: 'customization.md'
+        - Troubleshooting: 'troubleshooting.md'
         - Changelog: 'CHANGELOG.md'
         - License: 'LICENSE.md'

@@ -12,7 +12,7 @@ Link to this file in your `requirements.txt`:
 
 ```
 Django==4.2
-file:./private_wheels/django_paddle_subscriptions-1.4.1-py2.py3-none-any.whl
+file:./private_wheels/django_paddle_subscriptions-2.0.2-py2.py3-none-any.whl
 ```
 
 Install the pip requirements from the `requirements.txt` file into your project's virtual environment:
@@ -24,7 +24,7 @@ Install the pip requirements from the `requirements.txt` file into your project'
 Alternatively to start quickly, install the wheel file into your Django project's virtual environment right from the shell:
 
 ```shell
-(venv)$ pip install /path/to/django_paddle_subscriptions-1.4.1-py2.py3-none-any.whl
+(venv)$ pip install /path/to/django_paddle_subscriptions-2.0.2-py2.py3-none-any.whl
 ```
 
 ### 2. Add the app to `INSTALLED_APPS` of your project settings
@@ -84,8 +84,16 @@ from django.urls import path, include
 urlpatterns = [
     # ...
     path(
-        "subscriptions/",
+        "paddle/",
         include("paddle_subscriptions.urls", namespace="paddle_subscriptions"),
+    ),
+    path(
+        "subscriptions/",
+        include("paddle_subscriptions.urls.subscriptions", namespace="paddle_subscriptions_subscriptions"),
+    ),
+    path(
+        "purchases/",
+        include("paddle_subscriptions.urls.purchases", namespace="paddle_subscriptions_purchases"),
     ),
 ]
 ```
@@ -94,13 +102,15 @@ urlpatterns = [
 
 In your Django project, create subscription plans with benefits for pricing widgets. If you have a free plan, set the call-to-action URL name at `PADDLE_SUBSCRIPTIONS['FREE_PLAN_CTA_URL']`, for example, the sign up or waitlist form.
 
-At Paddle create Products for each paid subscription plan, and monthly and yearly prices for each product. You can skip monthly or yearly pricing if you want, but then you will need to modify the overwritten templates to exclude them there too.
+For subscriptions, create Products at Paddle for each paid subscription plan, and monthly and yearly prices for each product. You can skip monthly or yearly pricing if you want, but then you will need to modify the overwritten templates to exclude them there too.
+
+For other digital purchases, create Products at Paddle Billing for each digital good, and a price for each product. Later you will be able to group your products under product categories at your Django website.
 
 Deploy the data to a publicly accessible staging or production website. Paddle will send events to that website.
 
 ### 8. Link Paddle with your website
 
-Run the management command to fetch Paddle data and install the webhook:
+Run the management command to fetch Paddle Billing data and install the webhook:
 
 ```shell
 (venv)$ python manage.py set_up_paddle_subscriptions
@@ -108,17 +118,28 @@ Run the management command to fetch Paddle data and install the webhook:
 
 The webhook at `https://example.com/subscriptions/webhook/` will be registered at Paddle and all Paddle events available in the API will be sent to it.
 
-Then, link your subscription plans with sandbox monthly and yearly prices.
+Then, link your subscription plans with sandbox monthly and yearly prices. 
 
-Also set the default payment link at Paddle (Paddle ➔ Checkout ➔ Checkout settings) to `https://example.com/subscriptions/payments/`. It will redirect to the correct location based on your SaaS project if you have more than one with the same Paddle account.
+If you have digital products, you can create nullable foreign-key relations from your models to Product model for each type and group the Product models into product categories. For example, Books can have ISBN and downloadable files, desktop apps can have downloadable files and license numbers, user credit can have balance and credit transaction items.
 
-### 9. Create a pricing page
+It's recommended to make them nullable, because while going live, you'll need to re-link those models with the new Product instances.
 
-Add the following template tag either on the start page or on a separate pricing page view:
+Also set the default payment link at Paddle (Paddle ➔ Checkout ➔ Checkout settings) to `https://example.com/paddle/payments/`. It will redirect to the correct location based on your SaaS project if you have more than one with the same Paddle account.
+
+### 9. Create a pricing page and/or purchasable product list
+
+Add the following template tag for subscription-plan pricing either on the start page or on a separate pricing page view:
 
 ```django
 {% load paddle_subscriptions_tags %}
 {% paddle_subscriptions_pricing %}
+```
+
+Add the following template tag to list out products under a specific category identified by a slug:
+
+```django
+{% load paddle_subscriptions_tags %}
+{% paddle_subscriptions_category_products "licenses" %}
 ```
 
 ### 10. Copy the templates to your project
@@ -225,6 +246,82 @@ def delete_account(request):
     return render(request, "accounts/delete_account.html", context)
 ```
 
+### 12. Handle the purchases with the `webhook_triggered` signal
+
+When selling digital goods, make sure to update user's access to the purchased products at the 
+`webhook_triggered` signal handler. Some examples:
+
+- Link a purchased ebook to a user.
+- Link a purchased app or license number to a user.
+- Update user credit balanse based on the bought credits.
+
+Here is an example with credits:
+
+__myproject/apps/credits/apps.py__
+
+```python
+from django.apps import AppConfig
+
+
+class CreditsConfig(AppConfig):
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "myproject.apps.credits"
+
+    def ready(self):
+        from paddle_subscriptions.signals import webhook_triggered
+        from .signal_handlers import update_credits
+
+        webhook_triggered.connect(update_credits)
+```
+
+__myproject/apps/credits/signal_handlers.py__
+
+```python
+def update_credits(sender, **kwargs):
+    """
+    Add credits that the user bought to their credit balance.
+    """
+    from django.conf import settings
+    from django.db import transaction as db_transaction
+    from myproject.apps.accounts.models import User
+    from myproject.apps.credits.models import Credit, CreditTransaction
+    from paddle_subscriptions.models import Transaction
+
+    api_event = kwargs.get("api_event")
+    if api_event.event_type != "checkout.completed":
+        return
+
+    transaction_id = api_event.data["transaction_id"]
+    if not (transaction := Transaction.objects.filter(pk=transaction_id).first()):
+        return
+
+    transaction_item = transaction.transactionitem_set.first()
+    if transaction_item.price.billing_cycle_interval or not (
+        user := User.objects.filter(pk=transaction.custom_data.get("user_id")).first()
+    ):
+        return
+
+    if not (
+        credits_to_add := settings.PADDLE_PRODUCT_PRICE_CREDITS.get(
+            transaction_item.price.name
+        )
+    ):
+        return
+
+    credits_to_add = credits_to_add * transaction_item.quantity
+
+    credit, _created = Credit.objects.get_or_create(user=user)
+    with db_transaction.atomic():
+        credit_transaction = CreditTransaction.objects.create(
+            user=user,
+            transaction_type=CreditTransaction.TransactionType.BOUGHT,
+            credits=credits_to_add,
+        )
+        credit.balance += credit_transaction.credits
+        credit.save()
+
+```
+
 ## How to Use
 
 ### 1. The subscription details page
@@ -295,7 +392,7 @@ Remove the `PADDLE_SUBSCRIPTIONS["RESTRICTED_TO_IPS"]` setting.
 (venv)$ python manage.py set_up_paddle_subscriptions
 ```
 
-Then, link your subscription plans with live monthly and yearly prices.
+Then, link your subscription plans with live monthly and yearly prices. Also link your specific product models with the Product model and attach the categories for them.
 
 ### 3. Test live payments and subscriptions
 

@@ -56,17 +56,16 @@ PADDLE_SUBSCRIPTIONS["CHECKOUT_THEME"] = get_paddle_subscriptions_theme
 
 ## Other Checkout Settings
 
-The `PADDLE_SUBSCRIPTIONS["CHECKOUT_SHOW_ADD_TAX_ID"]` setting defines whether the field for a tax number should be shown at checkout (default: True).
-
-The `PADDLE_SUBSCRIPTIONS["CHECKOUT_SHOW_DISCOUNTS"]` setting defines whether the field for a discount code should be shown at checkout (default: True).
-
-Use the `PADDLE_SUBSCRIPTIONS["CHECKOUT_SUCCESS_URL_FOR_AUTHENTICATED"]` to redirect an authenticated user who has just subscribed to a custom success page. Set the URL path name, path, or URL of that page.
-
-If you allow the anonymous visitors to subscribe before signing up, set the `PADDLE_SUBSCRIPTIONS["CHECKOUT_SUCCESS_URL_FOR_ANONYMOUS"]` to your signup page that handles the connecting the subscription by `paddle_transaction_id` cookie to the newly registered user (default: `"/signup/"`).
+- `PADDLE_SUBSCRIPTIONS["CHECKOUT_SHOW_ADD_TAX_ID"]` (default: `True`) - defines whether the field for a tax number should be shown at checkout.
+- `PADDLE_SUBSCRIPTIONS["CHECKOUT_SHOW_DISCOUNTS"]` (default: `True`) - defines whether the field for a discount code should be shown at checkout.
+- `PADDLE_SUBSCRIPTIONS["CHECKOUT_SUCCESS_URL_FOR_AUTHENTICATED"]` (default: `"paddle_subscriptions:transaction_success"`) - redirect an authenticated user who has just subscribed or purchased something to a custom success page. Set the URL path name, path, or URL of that page. The default view redirects either to subscription success or to the purchase success page.
+- `PADDLE_SUBSCRIPTIONS["CHECKOUT_SUCCESS_URL_FOR_ANONYMOUS"]` (default: `/signup/`) - the URL of your signup page if you allow the anonymous visitors to subscribe before signing up. Your signup page must connect the newly registered user and the subscription recognized by `paddle_transaction_id` cookie.
+- `PADDLE_SUBSCRIPTIONS["SUBSCRIPTION_SUCCESS_URL"]` setting (default: `"paddle_subscriptions_subscriptions:subscription_success"`) - the success page URL for subscriptions.
+- `PADDLE_SUBSCRIPTIONS["PURCHASE_SUCCESS_URL"]` (default:`"paddle_subscriptions_subscriptions:purchase_success"`) - the success page URL for purchases.
 
 ## Pausing and Cancelling Subscriptions
 
-Set whether subscriptions pausing must happen before the next billing period or immediately with `PADDLE_SUBSCRIPTIONS["WHEN_TO_PAUSE_SUBSCRIPTIONS"]` and `PADDLE_SUBSCRIPTIONS["WHEN_TO_CANCEL_SUBSCRIPTIONS"]` settings. Set them to  `"next_billing_period"` (default) or `"immediately"`.
+- `PADDLE_SUBSCRIPTIONS["WHEN_TO_PAUSE_SUBSCRIPTIONS"]` (default: `"next_billing_period"`) - set to define whether the subscription pausing should happen before the next billing period (`"next_billing_period"`) or immediately after clicking on the button (`"immediately"`).
 
 ## Administration
 
@@ -74,26 +73,26 @@ All Paddle Billing models can be fetched to your Django project via management c
 
 Settings for Paddle Billing models:
 
-- `PADDLE_SUBSCRIPTIONS["SHOW_PRODUCT_ADMIN"]` (default: True) - show products.
-- `PADDLE_SUBSCRIPTIONS["SHOW_PRICE_ADMIN"]` (default: True) - show prices.
-- `PADDLE_SUBSCRIPTIONS["SHOW_DISCOUNT_ADMIN"]` (default: False) - show discounts.
-- `PADDLE_SUBSCRIPTIONS["SHOW_CUSTOMER_ADMIN"]` (default: True) - show customers.
-- `PADDLE_SUBSCRIPTIONS["SHOW_ADDRESS_ADMIN"]` (default: False) - show addresses.
-- `PADDLE_SUBSCRIPTIONS["SHOW_BUSINESS_ADMIN"]` (default: False) - show businesses.
-- `PADDLE_SUBSCRIPTIONS["SHOW_TRANSACTION_ADMIN"]` (default: True) - show transactions.
-- `PADDLE_SUBSCRIPTIONS["SHOW_SUBSCRIPTION_ADMIN"]` (default: True) - show subscriptions.
-- `PADDLE_SUBSCRIPTIONS["SHOW_ADJUSTMENT_ADMIN"]` (default: False) - show adjustments.
-- `PADDLE_SUBSCRIPTIONS["SHOW_EVENT_TYPE_ADMIN"]` (default: False) - show event types.
-- `PADDLE_SUBSCRIPTIONS["SHOW_NOTIFICATION_SETTING_ADMIN"]` (default: True) - show notification settings (your webhook URLs).
-- `PADDLE_SUBSCRIPTIONS["SHOW_NOTIFICATION_ADMIN"]` (default: False) - show notifications.
-- `PADDLE_SUBSCRIPTIONS["SHOW_EVENT_ADMIN"]` (default: True) - show events.
+- `PADDLE_SUBSCRIPTIONS["SHOW_PRODUCT_ADMIN"]` (default: `True`) - show products.
+- `PADDLE_SUBSCRIPTIONS["SHOW_PRICE_ADMIN"]` (default: `True`) - show prices.
+- `PADDLE_SUBSCRIPTIONS["SHOW_DISCOUNT_ADMIN"]` (default: `False`) - show discounts.
+- `PADDLE_SUBSCRIPTIONS["SHOW_CUSTOMER_ADMIN"]` (default: `True`) - show customers.
+- `PADDLE_SUBSCRIPTIONS["SHOW_ADDRESS_ADMIN"]` (default: `False`) - show addresses.
+- `PADDLE_SUBSCRIPTIONS["SHOW_BUSINESS_ADMIN"]` (default: `False`) - show businesses.
+- `PADDLE_SUBSCRIPTIONS["SHOW_TRANSACTION_ADMIN"]` (default: `True`) - show transactions.
+- `PADDLE_SUBSCRIPTIONS["SHOW_SUBSCRIPTION_ADMIN"]` (default: `True`) - show subscriptions.
+- `PADDLE_SUBSCRIPTIONS["SHOW_ADJUSTMENT_ADMIN"]` (default: `False`) - show adjustments.
+- `PADDLE_SUBSCRIPTIONS["SHOW_EVENT_TYPE_ADMIN"]` (default: `False`) - show event types.
+- `PADDLE_SUBSCRIPTIONS["SHOW_NOTIFICATION_SETTING_ADMIN"]` (default: `True`) - show notification settings (your webhook URLs).
+- `PADDLE_SUBSCRIPTIONS["SHOW_NOTIFICATION_ADMIN"]` (default: `False`) - show notifications.
+- `PADDLE_SUBSCRIPTIONS["SHOW_EVENT_ADMIN"]` (default: `True`) - show events.
 
 Settings for extra Paddle Subscriptions models:
 
-- `PADDLE_SUBSCRIPTIONS["SHOW_WEB_PROJECT_ADMIN"]` (default: True) - show web projects when you have more than one SaaS projects using the same Paddle seller's account.
-- `PADDLE_SUBSCRIPTIONS["SHOW_PRODUCT_CATEGORY_ADMIN"]` (default: True) - show product categories to group your products when you have upsells.
-- `PADDLE_SUBSCRIPTIONS["SHOW_SUBSCRIPTION_PLAN_ADMIN"]` (default: True) - show subscription plans.
-- `PADDLE_SUBSCRIPTIONS["SHOW_SUBSCRIBER_ADMIN"]` (default: True) - show subscribers.
+- `PADDLE_SUBSCRIPTIONS["SHOW_WEB_PROJECT_ADMIN"]` (default: `True`) - show web projects when you have more than one SaaS projects using the same Paddle seller's account.
+- `PADDLE_SUBSCRIPTIONS["SHOW_PRODUCT_CATEGORY_ADMIN"]` (default: `True`) - show product categories to group your products when you have upsells.
+- `PADDLE_SUBSCRIPTIONS["SHOW_SUBSCRIPTION_PLAN_ADMIN"]` (default: `True`) - show subscription plans.
+- `PADDLE_SUBSCRIPTIONS["SHOW_SUBSCRIBER_ADMIN"]` (default: `True`) - show subscribers.
 
 ## Templates and CSS
 
@@ -106,16 +105,32 @@ These are the Django Paddle Subscription templates:
 - `paddle_subscriptions/`
     - `includes/`
         - `billing_dates.html` - information about the next billing dates.
+        - `category_products.html` - list of purchasable products under a category.
         - `js.html` - the JavaScripts included for Paddle Billing checkouts.
         - `pagination.html` - pagination widget for billing history.
         - `pricing.html` - list of all plans.
         - `paid_plans.html` - list of paid plans.
         - `plan_overview.html` - single plan overview.
-    - `base.html` - base page for subscriptions with the tab navigation.
-    - `billing_history.html` - billing history with downloadable invoices.
-    - `subscribe.html` - subscribing to a single plan.
-    - `subscription_success.html` - success page after successful subscription.
-    - `subscription_details.html` - main subscription page for registered users showing info about subscription plans or info about the current subscription.
+    - `purchases/`
+        - `base.html` - base page for subscriptions with the tab navigation.
+        - `billing_history.html` - billing history with downloadable invoices.
+        - `success.html` - success page after successful purchase.
+info
+    - `subscriptions/`
+        - `base.html` - base page for subscriptions with the tab navigation.
+        - `billing_history.html` - billing history with downloadable invoices.
+        - `subscribe.html` - subscribing to a single plan.
+        - `success.html` - success page after successful subscription.
+        - `subscription_details.html` - main subscription page for registered users showing info about subscription plans or info about the current subscription.
+
+All template tags of this package also support custom templates when you want to have multiple variations based on a context. Just end then with `using "<template_path>"`, for example:
+
+```django
+{% load paddle_subscriptions_tags %}
+{% paddle_subscriptions_category_products "licenses" using "products/licenses.html" %}
+{% paddle_subscriptions_category_products "ebooks" using "products/ebooks.html" %}
+{% paddle_subscriptions_category_products "desktop-apps" using "products/desktop-apps" %}
+```
 
 ## Using Content-Security-Policy with Django-CSP
 
