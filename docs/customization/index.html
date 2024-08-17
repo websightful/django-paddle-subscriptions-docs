@@ -153,7 +153,7 @@
 <h2 id="conditional-showing-of-the-pricing-widget">Conditional Showing of the Pricing Widget</h2>
 <p>You can restrict the showing of pricing widget to specific IPs by setting the <code>PADDLE_SUBSCRIPTIONS["RESTRICTED_TO_IPS"]</code> setting:</p>
 <pre><code class="language-python">PADDLE_SUBSCRIPTIONS[&quot;RESTRICTED_TO_IPS&quot;] = [
-    &quot;192.1.0.1&quot;,  # Your public IP address required for the staging or production environment
+    &quot;192.3.0.1&quot;,  # Your public IP address required for the staging or production environment
     &quot;127.0.0.1&quot;,  # Your local IP address required for the development environment
 ]
 </code></pre>
@@ -163,6 +163,7 @@
     {% load paddle_subscriptions_tags %}{% paddle_subscriptions_pricing %}
 {% endif %}
 </code></pre>
+<p>With the <code>PADDLE_SUBSCRIPTIONS["LOCALIZED_PRICING_TIMEOUT"]</code> setting (default: <code>3</code>), you can define how many seconds to wait for response about the localized pricing before falling back to the default pricing.</p>
 <h2 id="free-and-custom-plan-call-to-action-urls">Free and Custom Plan Call-to-action URLs</h2>
 <p>If you have a free plan, set the <code>PADDLE_SUBSCRIPTIONS["FREE_PLAN_CTA_URL"]</code> to a URL path name, path, or a URL of the signup or waitlist page.</p>
 <p>If you have a custom plan, set the <code>PADDLE_SUBSCRIPTIONS["CUSTOM_PRICING_PLAN_CTA_URL"]</code> to a URL path name, path, or a URL of the page with information about it.</p>
@@ -197,6 +198,7 @@ PADDLE_SUBSCRIPTIONS[&quot;CHECKOUT_THEME&quot;] = get_paddle_subscriptions_them
 <h2 id="pausing-and-cancelling-subscriptions">Pausing and Cancelling Subscriptions</h2>
 <ul>
 <li><code>PADDLE_SUBSCRIPTIONS["WHEN_TO_PAUSE_SUBSCRIPTIONS"]</code> (default: <code>"next_billing_period"</code>) - set to define whether the subscription pausing should happen before the next billing period (<code>"next_billing_period"</code>) or immediately after clicking on the button (<code>"immediately"</code>).</li>
+<li><code>PADDLE_SUBSCRIPTIONS["WHEN_TO_CANCEL_SUBSCRIPTIONS"]</code> (default: <code>"next_billing_period"</code>) - set to define whether the subscription cancelling should happen before the next billing period (<code>"next_billing_period"</code>) or immediately after clicking on the button (<code>"immediately"</code>).</li>
 </ul>
 <h2 id="administration">Administration</h2>
 <p>All Paddle Billing models can be fetched to your Django project via management commands, but not all of them are valuable for introspection. Below are the settings of what to show in administration.</p>
@@ -233,6 +235,7 @@ PADDLE_SUBSCRIPTIONS[&quot;CHECKOUT_THEME&quot;] = get_paddle_subscriptions_them
 <li><code>billing_dates.html</code> - information about the next billing dates.</li>
 <li><code>category_products.html</code> - list of purchasable products under a category.</li>
 <li><code>js.html</code> - the JavaScripts included for Paddle Billing checkouts.</li>
+<li><code>localization_notice.html</code> - a message about showing the default pricing, because localization request failed to respond within the timeout.</li>
 <li><code>pagination.html</code> - pagination widget for billing history.</li>
 <li><code>pricing.html</code> - list of all plans.</li>
 <li><code>paid_plans.html</code> - list of paid plans.</li>

@@ -11,6 +11,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+[v2.3.0] - 2024-08-17
+------------------
+
+### Changed
+
+- Timeout for localized pricing decreased to 3 seconds and made configurable, not to stop the start pages with pricing information for too long.
+
+### Fixed
+
+- Missing template tag library loaded.
+
+[v2.2.0] - 2024-08-16
+------------------
+
+### Added
+
+- Information that unlocalized pricing is used when it's used.
+
+### Changed
+
+- Timeout for localized pricing increased from 1 to 5 seconds.
+- Fall back to the default pricing if local prices are not returned in time.
+- Missing translatable strings added.
+
+[v2.1.1] - 2024-08-16
+------------------
+
+### Removed
+
+- Template cleanup.
+
 [v2.1.0] - 2024-08-09
 ------------------
 

@@ -6,7 +6,7 @@ You can restrict the showing of pricing widget to specific IPs by setting the `P
 
 ```python
 PADDLE_SUBSCRIPTIONS["RESTRICTED_TO_IPS"] = [
-    "192.1.0.1",  # Your public IP address required for the staging or production environment
+    "192.3.0.1",  # Your public IP address required for the staging or production environment
     "127.0.0.1",  # Your local IP address required for the development environment
 ]
 ```
@@ -20,6 +20,8 @@ Then in the templates of use the `request.show_paddle_subscriptions` to check wh
     {% load paddle_subscriptions_tags %}{% paddle_subscriptions_pricing %}
 {% endif %}
 ```
+
+With the `PADDLE_SUBSCRIPTIONS["LOCALIZED_PRICING_TIMEOUT"]` setting (default: `3`), you can define how many seconds to wait for response about the localized pricing before falling back to the default pricing.
 
 ## Free and Custom Plan Call-to-action URLs
 
@@ -66,6 +68,7 @@ PADDLE_SUBSCRIPTIONS["CHECKOUT_THEME"] = get_paddle_subscriptions_theme
 ## Pausing and Cancelling Subscriptions
 
 - `PADDLE_SUBSCRIPTIONS["WHEN_TO_PAUSE_SUBSCRIPTIONS"]` (default: `"next_billing_period"`) - set to define whether the subscription pausing should happen before the next billing period (`"next_billing_period"`) or immediately after clicking on the button (`"immediately"`).
+- `PADDLE_SUBSCRIPTIONS["WHEN_TO_CANCEL_SUBSCRIPTIONS"]` (default: `"next_billing_period"`) - set to define whether the subscription cancelling should happen before the next billing period (`"next_billing_period"`) or immediately after clicking on the button (`"immediately"`).
 
 ## Administration
 
@@ -107,6 +110,7 @@ These are the Django Paddle Subscription templates:
         - `billing_dates.html` - information about the next billing dates.
         - `category_products.html` - list of purchasable products under a category.
         - `js.html` - the JavaScripts included for Paddle Billing checkouts.
+        - `localization_notice.html` - a message about showing the default pricing, because localization request failed to respond within the timeout.
         - `pagination.html` - pagination widget for billing history.
         - `pricing.html` - list of all plans.
         - `paid_plans.html` - list of paid plans.
