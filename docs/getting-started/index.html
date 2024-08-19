@@ -175,20 +175,11 @@ SECURE_CROSS_ORIGIN_OPENER_POLICY = &quot;unsafe-none&quot;
 urlpatterns = [
     # ...
     # Common views, such as webhook
-    path(
-        &quot;paddle/&quot;,
-        include(&quot;paddle_subscriptions.urls&quot;, namespace=&quot;paddle_subscriptions&quot;),
-    ),
+    path(&quot;paddle/&quot;, include(&quot;paddle_subscriptions.urls&quot;)),
     # Subscription-related views
-    path(
-        &quot;subscriptions/&quot;,
-        include(&quot;paddle_subscriptions.urls.subscriptions&quot;, namespace=&quot;paddle_subscriptions_subscriptions&quot;),
-    ),
+    path(&quot;subscriptions/&quot;, include(&quot;paddle_subscriptions.urls.subscriptions&quot;)),
     # Non-recurring-purchase-related views
-    path(
-        &quot;purchases/&quot;,
-        include(&quot;paddle_subscriptions.urls.purchases&quot;, namespace=&quot;paddle_subscriptions_purchases&quot;),
-    ),
+    path(&quot;purchases/&quot;, include(&quot;paddle_subscriptions.urls.purchases&quot;)),
 ]
 </code></pre>
 <h3 id="7-create-paddle-data">7. Create Paddle data</h3>

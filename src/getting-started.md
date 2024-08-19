@@ -84,20 +84,11 @@ from django.urls import path, include
 urlpatterns = [
     # ...
     # Common views, such as webhook
-    path(
-        "paddle/",
-        include("paddle_subscriptions.urls", namespace="paddle_subscriptions"),
-    ),
+    path("paddle/", include("paddle_subscriptions.urls")),
     # Subscription-related views
-    path(
-        "subscriptions/",
-        include("paddle_subscriptions.urls.subscriptions", namespace="paddle_subscriptions_subscriptions"),
-    ),
+    path("subscriptions/", include("paddle_subscriptions.urls.subscriptions")),
     # Non-recurring-purchase-related views
-    path(
-        "purchases/",
-        include("paddle_subscriptions.urls.purchases", namespace="paddle_subscriptions_purchases"),
-    ),
+    path("purchases/", include("paddle_subscriptions.urls.purchases")),
 ]
 ```
 

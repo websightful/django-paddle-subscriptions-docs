@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+[v2.3.1] - 2024-08-19
+------------------
+
+### Fixed
+
+- URL resolving in the JavaScript snippet fixed.
+
 [v2.3.0] - 2024-08-17
 ------------------
 
