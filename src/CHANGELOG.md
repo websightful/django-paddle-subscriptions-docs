@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 
+[v2.3.3] - 2024-11-08
+------------------
+
+### Fixed
+
+- The `set_up_paddle_subscriptions` management command is now fixed to handle setups on new projects using an existing Paddle account that's already linked to other projects.
+
 [v2.3.2] - 2024-08-19
 ------------------
 
