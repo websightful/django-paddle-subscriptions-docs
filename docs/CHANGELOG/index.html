@@ -106,6 +106,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#v240-2025-04-21" class="nav-link">[v2.4.0] - 2025-04-21</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#v233-2024-11-08" class="nav-link">[v2.3.3] - 2024-11-08</a>
               <ul class="nav flex-column">
               </ul>
@@ -198,18 +202,28 @@
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>,
 and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 <h2 id="unreleased">[Unreleased]</h2>
-<h2 id="v233-2024-11-08">[v2.3.3] - 2024-11-08</h2>
+<p>...</p>
+<h2 id="v240-2025-04-21">[v2.4.0] - 2025-04-21</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Django 5.2 support.</li>
+</ul>
 <h3 id="fixed">Fixed</h3>
+<ul>
+<li>Styling for subscription pausing and cancelling buttons.</li>
+</ul>
+<h2 id="v233-2024-11-08">[v2.3.3] - 2024-11-08</h2>
+<h3 id="fixed_1">Fixed</h3>
 <ul>
 <li>The <code>set_up_paddle_subscriptions</code> management command is now fixed to handle setups on new projects using an existing Paddle account that's already linked to other projects.</li>
 </ul>
 <h2 id="v232-2024-08-19">[v2.3.2] - 2024-08-19</h2>
-<h3 id="fixed_1">Fixed</h3>
+<h3 id="fixed_2">Fixed</h3>
 <ul>
 <li>Missing subscription success page configured.</li>
 </ul>
 <h2 id="v231-2024-08-19">[v2.3.1] - 2024-08-19</h2>
-<h3 id="fixed_2">Fixed</h3>
+<h3 id="fixed_3">Fixed</h3>
 <ul>
 <li>URL resolving in the JavaScript snippet fixed.</li>
 </ul>
@@ -218,12 +232,12 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <ul>
 <li>Timeout for localized pricing decreased to 3 seconds and made configurable, not to stop the start pages with pricing information for too long.</li>
 </ul>
-<h3 id="fixed_3">Fixed</h3>
+<h3 id="fixed_4">Fixed</h3>
 <ul>
 <li>Missing template tag library loaded.</li>
 </ul>
 <h2 id="v220-2024-08-16">[v2.2.0] - 2024-08-16</h2>
-<h3 id="added">Added</h3>
+<h3 id="added_1">Added</h3>
 <ul>
 <li>Information that unlocalized pricing is used when it's used.</li>
 </ul>
@@ -239,7 +253,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li>Template cleanup.</li>
 </ul>
 <h2 id="v210-2024-08-09">[v2.1.0] - 2024-08-09</h2>
-<h3 id="added_1">Added</h3>
+<h3 id="added_2">Added</h3>
 <ul>
 <li>Django 5.1 support.</li>
 </ul>
@@ -249,12 +263,12 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li>Catching an error of mixmatched transactions.</li>
 </ul>
 <h2 id="v201-2024-07-15">[v2.0.1] - 2024-07-15</h2>
-<h3 id="fixed_4">Fixed</h3>
+<h3 id="fixed_5">Fixed</h3>
 <ul>
 <li>Don't show the next billing date if the current plan is free.</li>
 </ul>
 <h2 id="v200-2024-07-14">[v2.0.0] - 2024-07-14</h2>
-<h3 id="added_2">Added</h3>
+<h3 id="added_3">Added</h3>
 <ul>
 <li>Buying non-recurring digital products.</li>
 </ul>
@@ -270,32 +284,32 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li>The paddle-billing-client version requirements updated.</li>
 </ul>
 <h2 id="v140-2024-06-29">[v1.4.0] - 2024-06-29</h2>
-<h3 id="fixed_5">Fixed</h3>
+<h3 id="fixed_6">Fixed</h3>
 <ul>
 <li>Fixed support for non-recurring products.</li>
 </ul>
 <h2 id="v133-2024-06-28">[v1.3.3] - 2024-06-28</h2>
-<h3 id="fixed_6">Fixed</h3>
+<h3 id="fixed_7">Fixed</h3>
 <ul>
 <li>Showing nice transaction details for fully discounted transactions.</li>
 <li>Showing prices for fully discounted transactions in the transaction history view.</li>
 </ul>
 <h2 id="v132-2024-02-14">[v1.3.2] - 2024-02-14</h2>
-<h3 id="fixed_7">Fixed</h3>
+<h3 id="fixed_8">Fixed</h3>
 <ul>
 <li>More stable real-time pricing handling.</li>
 </ul>
 <h2 id="v131-2024-02-13">[v1.3.1] - 2024-02-13</h2>
-<h3 id="fixed_8">Fixed</h3>
+<h3 id="fixed_9">Fixed</h3>
 <ul>
 <li>Prices rounded to cents in the pricing page.</li>
 </ul>
 <h2 id="v130-2024-02-11">[v1.3.0] - 2024-02-11</h2>
-<h3 id="added_3">Added</h3>
+<h3 id="added_4">Added</h3>
 <ul>
 <li>Unit tests for fetching information from Paddle Billing.</li>
 </ul>
-<h3 id="fixed_9">Fixed</h3>
+<h3 id="fixed_10">Fixed</h3>
 <ul>
 <li>Saving adjustments fixed.</li>
 </ul>
@@ -305,7 +319,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li>Link to documentation</li>
 </ul>
 <h2 id="v120-2024-02-10">[v1.2.0] - 2024-02-10</h2>
-<h3 id="added_4">Added</h3>
+<h3 id="added_5">Added</h3>
 <ul>
 <li>Templates added</li>
 <li>Markdown files added</li>
@@ -315,12 +329,12 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <ul>
 <li>Functions refactored.</li>
 </ul>
-<h3 id="fixed_10">Fixed</h3>
+<h3 id="fixed_11">Fixed</h3>
 <ul>
 <li>Cosmetic styling adjustments.</li>
 </ul>
 <h2 id="v100-2024-02-06">[v1.0.0] - 2024-02-06</h2>
-<h3 id="added_5">Added</h3>
+<h3 id="added_6">Added</h3>
 <ul>
 <li>Paddle Billing models.</li>
 <li>Custom Django Paddle Subscriptions models.</li>

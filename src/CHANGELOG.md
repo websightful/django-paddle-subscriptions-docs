@@ -10,6 +10,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [Unreleased]
 ------------
+...
+
+[v2.4.0] - 2025-04-21
+------------------
+
+### Added
+
+- Django 5.2 support.
+
+### Fixed
+
+- Styling for subscription pausing and cancelling buttons.
+
 
 [v2.3.3] - 2024-11-08
 ------------------
