@@ -21,7 +21,7 @@ The Django Paddle Subscriptions app is for business owners and tech entrepreneur
 | Feature                                   | Value                                          |
 |-------------------------------------------|------------------------------------------------|
 | Supported modern browsers                 | Chrome, Firefox, Safari, Opera, Microsoft Edge |
-| Supported Django versions                 | 4.2, 5.0, 5.1, 5.                              |
+| Supported Django versions                 | 4.2, 5.0, 5.1, 5.2                             |
 | Supported Python versions                 | 3.10, 3.11, 3.12, 3.13                         |
 | Default styling with TailwindCSS          | ✔︎                                              |
 | Translatable                              | ✔︎                                              |
