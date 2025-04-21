@@ -82,6 +82,10 @@ The Django Paddle Subscriptions app under the hood uses [paddle-billing-client](
 
 In addition to that, Django Paddle Subscriptions uses [currencies](https://pypi.org/project/currencies/), [django-ipware](https://github.com/un33k/django-ipware), and [func-timeout](https://pypi.org/project/func-timeout/).
 
+## Known issues
+
+The current version of Django Paddle Subscriptions doesn't work together with __google-api-python-client__, because of a [issue in its implementation](https://github.com/googleapis/google-api-python-client/issues/2485).
+
 ## Disclaimer
 
 Django Paddle Subscriptions app is provided without any warranties or guarantees, either explicit or implied.
