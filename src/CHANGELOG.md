@@ -12,6 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ------------
 ...
 
+[v2.5.0] - 2025-09-28
+------------------
+
+### Changed
+
+- Handling the default settings changed internally.
+
+### Fixed
+
+- Error handling for the price localization in the pricing page.
+
 [v2.4.0] - 2025-04-21
 ------------------
 

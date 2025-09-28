@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +10,13 @@
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>Changelog - Django Paddle Subscriptions</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <link href="../css/style.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
@@ -23,7 +27,7 @@
             <div class="container">
                 <a class="navbar-brand" href="..">Django Paddle Subscriptions</a>
                 <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -31,17 +35,17 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href=".." class="nav-link">Home</a>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../screenshots/" class="nav-link">Screenshots</a>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../getting-started/" class="nav-link">Getting Started</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">More</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -53,7 +57,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Changelog</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Changelog</a>
 </li>
                                     
 <li>
@@ -63,9 +67,9 @@
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
+                    <ul class="nav navbar-nav ms-md-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
@@ -89,104 +93,108 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
             <span class="fa fa-angle-down"></span>
         </button>
     </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#changelog" class="nav-link">Changelog</a>
+            <li class="nav-item" data-bs-level="1"><a href="#changelog" class="nav-link">Changelog</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#unreleased" class="nav-link">[Unreleased]</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#v240-2025-04-21" class="nav-link">[v2.4.0] - 2025-04-21</a>
+            <li class="nav-item" data-bs-level="2"><a href="#unreleased" class="nav-link">[Unreleased]</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v233-2024-11-08" class="nav-link">[v2.3.3] - 2024-11-08</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v250-2025-09-28" class="nav-link">[v2.5.0] - 2025-09-28</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v232-2024-08-19" class="nav-link">[v2.3.2] - 2024-08-19</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v240-2025-04-21" class="nav-link">[v2.4.0] - 2025-04-21</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v231-2024-08-19" class="nav-link">[v2.3.1] - 2024-08-19</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v233-2024-11-08" class="nav-link">[v2.3.3] - 2024-11-08</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v230-2024-08-17" class="nav-link">[v2.3.0] - 2024-08-17</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v232-2024-08-19" class="nav-link">[v2.3.2] - 2024-08-19</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v220-2024-08-16" class="nav-link">[v2.2.0] - 2024-08-16</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v231-2024-08-19" class="nav-link">[v2.3.1] - 2024-08-19</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v211-2024-08-16" class="nav-link">[v2.1.1] - 2024-08-16</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v230-2024-08-17" class="nav-link">[v2.3.0] - 2024-08-17</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v210-2024-08-09" class="nav-link">[v2.1.0] - 2024-08-09</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v220-2024-08-16" class="nav-link">[v2.2.0] - 2024-08-16</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v202-2024-07-17" class="nav-link">[v2.0.2] - 2024-07-17</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v211-2024-08-16" class="nav-link">[v2.1.1] - 2024-08-16</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v201-2024-07-15" class="nav-link">[v2.0.1] - 2024-07-15</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v210-2024-08-09" class="nav-link">[v2.1.0] - 2024-08-09</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v200-2024-07-14" class="nav-link">[v2.0.0] - 2024-07-14</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v202-2024-07-17" class="nav-link">[v2.0.2] - 2024-07-17</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v141-2024-07-01" class="nav-link">[v1.4.1] - 2024-07-01</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v201-2024-07-15" class="nav-link">[v2.0.1] - 2024-07-15</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v140-2024-06-29" class="nav-link">[v1.4.0] - 2024-06-29</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v200-2024-07-14" class="nav-link">[v2.0.0] - 2024-07-14</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v133-2024-06-28" class="nav-link">[v1.3.3] - 2024-06-28</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v141-2024-07-01" class="nav-link">[v1.4.1] - 2024-07-01</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v132-2024-02-14" class="nav-link">[v1.3.2] - 2024-02-14</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v140-2024-06-29" class="nav-link">[v1.4.0] - 2024-06-29</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v131-2024-02-13" class="nav-link">[v1.3.1] - 2024-02-13</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v133-2024-06-28" class="nav-link">[v1.3.3] - 2024-06-28</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v130-2024-02-11" class="nav-link">[v1.3.0] - 2024-02-11</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v132-2024-02-14" class="nav-link">[v1.3.2] - 2024-02-14</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v121-2024-02-10" class="nav-link">[v1.2.1] - 2024-02-10</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v131-2024-02-13" class="nav-link">[v1.3.1] - 2024-02-13</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v120-2024-02-10" class="nav-link">[v1.2.0] - 2024-02-10</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v130-2024-02-11" class="nav-link">[v1.3.0] - 2024-02-11</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v110-2024-02-10" class="nav-link">[v1.1.0] - 2024-02-10</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v121-2024-02-10" class="nav-link">[v1.2.1] - 2024-02-10</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#v100-2024-02-06" class="nav-link">[v1.0.0] - 2024-02-06</a>
+            <li class="nav-item" data-bs-level="2"><a href="#v120-2024-02-10" class="nav-link">[v1.2.0] - 2024-02-10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#v110-2024-02-10" class="nav-link">[v1.1.0] - 2024-02-10</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#v100-2024-02-06" class="nav-link">[v1.0.0] - 2024-02-06</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -203,36 +211,45 @@
 and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
 <h2 id="unreleased">[Unreleased]</h2>
 <p>...</p>
+<h2 id="v250-2025-09-28">[v2.5.0] - 2025-09-28</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Handling the default settings changed internally.</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Error handling for the price localization in the pricing page.</li>
+</ul>
 <h2 id="v240-2025-04-21">[v2.4.0] - 2025-04-21</h2>
 <h3 id="added">Added</h3>
 <ul>
 <li>Django 5.2 support.</li>
 </ul>
-<h3 id="fixed">Fixed</h3>
+<h3 id="fixed_1">Fixed</h3>
 <ul>
 <li>Styling for subscription pausing and cancelling buttons.</li>
 </ul>
 <h2 id="v233-2024-11-08">[v2.3.3] - 2024-11-08</h2>
-<h3 id="fixed_1">Fixed</h3>
+<h3 id="fixed_2">Fixed</h3>
 <ul>
 <li>The <code>set_up_paddle_subscriptions</code> management command is now fixed to handle setups on new projects using an existing Paddle account that's already linked to other projects.</li>
 </ul>
 <h2 id="v232-2024-08-19">[v2.3.2] - 2024-08-19</h2>
-<h3 id="fixed_2">Fixed</h3>
+<h3 id="fixed_3">Fixed</h3>
 <ul>
 <li>Missing subscription success page configured.</li>
 </ul>
 <h2 id="v231-2024-08-19">[v2.3.1] - 2024-08-19</h2>
-<h3 id="fixed_3">Fixed</h3>
+<h3 id="fixed_4">Fixed</h3>
 <ul>
 <li>URL resolving in the JavaScript snippet fixed.</li>
 </ul>
 <h2 id="v230-2024-08-17">[v2.3.0] - 2024-08-17</h2>
-<h3 id="changed">Changed</h3>
+<h3 id="changed_1">Changed</h3>
 <ul>
 <li>Timeout for localized pricing decreased to 3 seconds and made configurable, not to stop the start pages with pricing information for too long.</li>
 </ul>
-<h3 id="fixed_4">Fixed</h3>
+<h3 id="fixed_5">Fixed</h3>
 <ul>
 <li>Missing template tag library loaded.</li>
 </ul>
@@ -241,7 +258,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <ul>
 <li>Information that unlocalized pricing is used when it's used.</li>
 </ul>
-<h3 id="changed_1">Changed</h3>
+<h3 id="changed_2">Changed</h3>
 <ul>
 <li>Timeout for localized pricing increased from 1 to 5 seconds.</li>
 <li>Fall back to the default pricing if local prices are not returned in time.</li>
@@ -258,12 +275,12 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li>Django 5.1 support.</li>
 </ul>
 <h2 id="v202-2024-07-17">[v2.0.2] - 2024-07-17</h2>
-<h3 id="changed_2">Changed</h3>
+<h3 id="changed_3">Changed</h3>
 <ul>
 <li>Catching an error of mixmatched transactions.</li>
 </ul>
 <h2 id="v201-2024-07-15">[v2.0.1] - 2024-07-15</h2>
-<h3 id="fixed_5">Fixed</h3>
+<h3 id="fixed_6">Fixed</h3>
 <ul>
 <li>Don't show the next billing date if the current plan is free.</li>
 </ul>
@@ -272,35 +289,35 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <ul>
 <li>Buying non-recurring digital products.</li>
 </ul>
-<h3 id="changed_3">Changed</h3>
+<h3 id="changed_4">Changed</h3>
 <ul>
 <li>List administration made more user-friendly.</li>
 <li>Template tags allow setting a custom template.</li>
 <li>Separation of subscriptions and purchases.</li>
 </ul>
 <h2 id="v141-2024-07-01">[v1.4.1] - 2024-07-01</h2>
-<h3 id="changed_4">Changed</h3>
+<h3 id="changed_5">Changed</h3>
 <ul>
 <li>The paddle-billing-client version requirements updated.</li>
 </ul>
 <h2 id="v140-2024-06-29">[v1.4.0] - 2024-06-29</h2>
-<h3 id="fixed_6">Fixed</h3>
+<h3 id="fixed_7">Fixed</h3>
 <ul>
 <li>Fixed support for non-recurring products.</li>
 </ul>
 <h2 id="v133-2024-06-28">[v1.3.3] - 2024-06-28</h2>
-<h3 id="fixed_7">Fixed</h3>
+<h3 id="fixed_8">Fixed</h3>
 <ul>
 <li>Showing nice transaction details for fully discounted transactions.</li>
 <li>Showing prices for fully discounted transactions in the transaction history view.</li>
 </ul>
 <h2 id="v132-2024-02-14">[v1.3.2] - 2024-02-14</h2>
-<h3 id="fixed_8">Fixed</h3>
+<h3 id="fixed_9">Fixed</h3>
 <ul>
 <li>More stable real-time pricing handling.</li>
 </ul>
 <h2 id="v131-2024-02-13">[v1.3.1] - 2024-02-13</h2>
-<h3 id="fixed_9">Fixed</h3>
+<h3 id="fixed_10">Fixed</h3>
 <ul>
 <li>Prices rounded to cents in the pricing page.</li>
 </ul>
@@ -309,12 +326,12 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <ul>
 <li>Unit tests for fetching information from Paddle Billing.</li>
 </ul>
-<h3 id="fixed_10">Fixed</h3>
+<h3 id="fixed_11">Fixed</h3>
 <ul>
 <li>Saving adjustments fixed.</li>
 </ul>
 <h2 id="v121-2024-02-10">[v1.2.1] - 2024-02-10</h2>
-<h3 id="changed_5">Changed</h3>
+<h3 id="changed_6">Changed</h3>
 <ul>
 <li>Link to documentation</li>
 </ul>
@@ -325,11 +342,11 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li>Markdown files added</li>
 </ul>
 <h2 id="v110-2024-02-10">[v1.1.0] - 2024-02-10</h2>
-<h3 id="changed_6">Changed</h3>
+<h3 id="changed_7">Changed</h3>
 <ul>
 <li>Functions refactored.</li>
 </ul>
-<h3 id="fixed_11">Fixed</h3>
+<h3 id="fixed_12">Fixed</h3>
 <ul>
 <li>Cosmetic styling adjustments.</li>
 </ul>
@@ -363,8 +380,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="../js/jquery-3.6.0.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
         <script>
             var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
@@ -377,7 +393,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>From here you can search these documents. Enter your search terms below.</p>
@@ -397,7 +413,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <table class="table">
