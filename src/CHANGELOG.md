@@ -1,5 +1,4 @@
-Changelog
-=========
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -8,12 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
-[Unreleased]
-------------
-...
+## [Unreleased]
 
-[v2.5.0] - 2025-09-28
-------------------
+## [v2.6.0] - 2026-05-09
+
+### Added
+
+- Support for Django 6.0
+
+### Changed
+
+- Setup script modernized.
+
+### Removed
+
+- Dropped support for Python 3.8 and 3.9.
+
+## [v2.5.0] - 2025-09-28
 
 ### Changed
 
@@ -23,8 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Error handling for the price localization in the pricing page.
 
-[v2.4.0] - 2025-04-21
-------------------
+## [v2.4.0] - 2025-04-21
 
 ### Added
 
@@ -35,29 +44,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Styling for subscription pausing and cancelling buttons.
 
 
-[v2.3.3] - 2024-11-08
-------------------
+## [v2.3.3] - 2024-11-08
 
 ### Fixed
 
 - The `set_up_paddle_subscriptions` management command is now fixed to handle setups on new projects using an existing Paddle account that's already linked to other projects.
 
-[v2.3.2] - 2024-08-19
-------------------
+## [v2.3.2] - 2024-08-19
 
 ### Fixed
 
 - Missing subscription success page configured.
 
-[v2.3.1] - 2024-08-19
-------------------
+## [v2.3.1] - 2024-08-19
 
 ### Fixed
 
 - URL resolving in the JavaScript snippet fixed.
 
-[v2.3.0] - 2024-08-17
-------------------
+## [v2.3.0] - 2024-08-17
 
 ### Changed
 
@@ -67,8 +72,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Missing template tag library loaded.
 
-[v2.2.0] - 2024-08-16
-------------------
+## [v2.2.0] - 2024-08-16
 
 ### Added
 
@@ -80,36 +84,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fall back to the default pricing if local prices are not returned in time.
 - Missing translatable strings added.
 
-[v2.1.1] - 2024-08-16
-------------------
+## [v2.1.1] - 2024-08-16
 
 ### Removed
 
 - Template cleanup.
 
-[v2.1.0] - 2024-08-09
-------------------
+## [v2.1.0] - 2024-08-09
 
 ### Added
 
 - Django 5.1 support.
 
-[v2.0.2] - 2024-07-17
-------------------
+## [v2.0.2] - 2024-07-17
 
 ### Changed
 
 - Catching an error of mixmatched transactions.
 
-[v2.0.1] - 2024-07-15
-------------------
+## [v2.0.1] - 2024-07-15
 
 ### Fixed
 
 - Don't show the next billing date if the current plan is free.
 
-[v2.0.0] - 2024-07-14
-------------------
+## [v2.0.0] - 2024-07-14
 
 ### Added
 
@@ -121,45 +120,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Template tags allow setting a custom template.
 - Separation of subscriptions and purchases.
 
-[v1.4.1] - 2024-07-01
-------------------
+## [v1.4.1] - 2024-07-01
 
 ### Changed
 
 - The paddle-billing-client version requirements updated.
 
-
-[v1.4.0] - 2024-06-29
-------------------
+## [v1.4.0] - 2024-06-29
 
 ### Fixed
 
 - Fixed support for non-recurring products.
 
-[v1.3.3] - 2024-06-28
-------------------
+## [v1.3.3] - 2024-06-28
 
 ### Fixed
 
 - Showing nice transaction details for fully discounted transactions.
 - Showing prices for fully discounted transactions in the transaction history view.
 
-[v1.3.2] - 2024-02-14
-------------------
+## [v1.3.2] - 2024-02-14
 
 ### Fixed
 
 - More stable real-time pricing handling.
 
-[v1.3.1] - 2024-02-13
-------------------
+## [v1.3.1] - 2024-02-13
 
 ### Fixed
 
 - Prices rounded to cents in the pricing page.
 
-[v1.3.0] - 2024-02-11
-------------------
+## [v1.3.0] - 2024-02-11
 
 ### Added
 
@@ -170,23 +162,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Saving adjustments fixed.
 
 
-[v1.2.1] - 2024-02-10
-------------------
+## [v1.2.1] - 2024-02-10
 
 ### Changed
 
 - Link to documentation
 
-[v1.2.0] - 2024-02-10
-------------------
+## [v1.2.0] - 2024-02-10
 
 ### Added
 
 - Templates added
 - Markdown files added
 
-[v1.1.0] - 2024-02-10
-------------------
+## [v1.1.0] - 2024-02-10
 
 ### Changed
 
@@ -196,8 +185,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Cosmetic styling adjustments.
 
-[v1.0.0] - 2024-02-06
-------------------
+## [v1.0.0] - 2024-02-06
 
 ### Added
 
