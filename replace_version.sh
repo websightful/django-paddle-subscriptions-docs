@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Activate the virtual environment
+source "$SCRIPT_DIR/.venv/bin/activate"
+
 # Get old and new versions
 read -p "Enter old software version (major.minor.patch): " old_version
 read -p "Enter new software version (major.minor.patch): " new_version

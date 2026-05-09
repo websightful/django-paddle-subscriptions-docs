@@ -21,21 +21,21 @@ The Django Paddle Subscriptions app is for business owners and tech entrepreneur
 | Feature                                   | Value                                          |
 |-------------------------------------------|------------------------------------------------|
 | Supported modern browsers                 | Chrome, Firefox, Safari, Opera, Microsoft Edge |
-| Supported Django versions                 | 4.2, 5.0, 5.1, 5.2                             |
-| Supported Python versions                 | 3.10, 3.11, 3.12, 3.13                         |
-| Default styling with TailwindCSS          | ✔︎                                              |
-| Translatable                              | ✔︎                                              |
-| Configurable                              | ✔︎                                              |
-| Localized pricing widget                  | ✔︎                                              |
-| Offered free and paid plans               | ✔︎                                              |
-| Subscriptions before or after signup      | ✔︎                                              |
-| Monthly and yearly pricing                | ✔︎                                              |
-| List of paid invoices                     | ✔︎                                              |
-| Pausing and cancelling subscriptions      | ✔︎                                              |
-| Copy of Paddle data in your database      | ✔︎                                              |
-| Multiple SaaS with the same Paddle account| ✔︎                                              |
-| Infrastructure for upsells                | ✔︎                                              |
-| Latest package version                    | 2.5.0                                          |
+| Supported Django versions                 | 4.2, 5.0, 5.1, 5.2, 6.0                        |
+| Supported Python versions                 | 3.10, 3.11, 3.12, 3.13, 3.14                   |
+| Default styling with TailwindCSS          | ✔︎                                             |
+| Translatable                              | ✔︎                                             |
+| Configurable                              | ✔︎                                             |
+| Localized pricing widget                  | ✔︎                                             |
+| Offered free and paid plans               | ✔︎                                             |
+| Subscriptions before or after signup      | ✔︎                                             |
+| Monthly and yearly pricing                | ✔︎                                             |
+| List of paid invoices                     | ✔︎                                             |
+| Pausing and cancelling subscriptions      | ✔︎                                             |
+| Copy of Paddle data in your database      | ✔︎                                             |
+| Multiple SaaS with the same Paddle account| ✔︎                                             |
+| Infrastructure for upsells                | ✔︎                                             |
+| Latest package version                    | 2.6.0                                          |
 
 ## What are the benefits?
 
